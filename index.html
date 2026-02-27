@@ -132,51 +132,381 @@
       </div>
     </section>
 
-    <!-- Oferta -->
+    <!-- Oferta — zakładki produktowe -->
     <section id="oferta" class="section section-dark">
       <div class="container">
         <div class="section-header">
           <p class="eyebrow animate-on-scroll">Oferta</p>
-          <h2 class="animate-on-scroll">Sprzedaż i dostawa<br><span class="gold">dla domu oraz ogrodu</span></h2>
+          <h2 class="animate-on-scroll">Poznaj nasze <span class="gold">produkty</span></h2>
+          <p class="lead animate-on-scroll">Każdy produkt dobieramy z pasją i wieloletnim doświadczeniem.</p>
         </div>
-        <div class="cards">
-          <article class="card animate-on-scroll">
-            <div class="card-icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/></svg>
+
+        <!-- Nawigacja zakładek -->
+        <div class="tabs animate-on-scroll">
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="drewno">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/></svg>
+              Drewno
+            </button>
+            <button class="tab-btn" data-tab="kora">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+              Kora
+            </button>
+            <button class="tab-btn" data-tab="ziemia">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/></svg>
+              Ziemia
+            </button>
+          </div>
+
+          <!-- ===== ZAKŁADKA: DREWNO ===== -->
+          <div class="tab-panel active" id="tab-drewno">
+
+            <div class="tab-intro">
+              <h3>Drewno kominkowe i opałowe</h3>
+              <p>Nasze drewno pochodzi wyłącznie z certyfikowanych nadleśnictw Lasów Państwowych. Każda partia jest starannie selekcjonowana — dbamy o właściwy gatunek, sezonowanie i wymiary, bo wiemy, że ogień w kominku to nie tylko ciepło, ale przede wszystkim atmosfera Twojego domu.</p>
             </div>
-            <h3>Drewno kominkowe i opałowe</h3>
-            <p>Brzoza, dąb, olcha, mieszanka. Drewno świeże, podsuszane i suche — idealny wybór na każdą porę roku.</p>
-            <ul>
-              <li>1 m<sup>3</sup> nasypowy (narzucane)</li>
-              <li>1 m<sup>3</sup> układany (na palecie)</li>
-              <li>Drewno w wałkach</li>
-            </ul>
-          </article>
-          <article class="card animate-on-scroll">
-            <div class="card-icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/></svg>
+
+            <!-- Gatunki drewna -->
+            <h4 class="tab-subtitle">Gatunki do wyboru</h4>
+            <div class="wood-types-grid">
+              <div class="wood-type">
+                <h3>Brzoza</h3>
+                <div class="wood-props">
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Kaloryczność</span>
+                    <div class="wood-bar"><div class="wood-bar-fill" style="width:75%"></div></div>
+                    <span class="wood-prop-val">~1900 kWh/mp</span>
+                  </div>
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Czas schnięcia</span>
+                    <span class="wood-prop-val">12–18 mies.</span>
+                  </div>
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Zapach</span>
+                    <span class="wood-prop-val">Przyjemny, delikatny</span>
+                  </div>
+                </div>
+                <p class="wood-desc">Najpopularniejszy gatunek kominkowy. Łatwe rozpalanie, piękny płomień, przyjemny aromat. Idealna do wieczorów przy kominku.</p>
+              </div>
+              <div class="wood-type">
+                <h3>Dąb</h3>
+                <div class="wood-props">
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Kaloryczność</span>
+                    <div class="wood-bar"><div class="wood-bar-fill" style="width:95%"></div></div>
+                    <span class="wood-prop-val">~2100 kWh/mp</span>
+                  </div>
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Czas schnięcia</span>
+                    <span class="wood-prop-val">18–24 mies.</span>
+                  </div>
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Zapach</span>
+                    <span class="wood-prop-val">Intensywny, leśny</span>
+                  </div>
+                </div>
+                <p class="wood-desc">Najwyższa kaloryczność wśród gatunków liściastych. Długo się pali i daje dużo żaru. Idealny na mroźne wieczory i jako główne paliwo grzewcze.</p>
+              </div>
+              <div class="wood-type">
+                <h3>Olcha</h3>
+                <div class="wood-props">
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Kaloryczność</span>
+                    <div class="wood-bar"><div class="wood-bar-fill" style="width:60%"></div></div>
+                    <span class="wood-prop-val">~1500 kWh/mp</span>
+                  </div>
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Czas schnięcia</span>
+                    <span class="wood-prop-val">10–14 mies.</span>
+                  </div>
+                  <div class="wood-prop">
+                    <span class="wood-prop-label">Zapach</span>
+                    <span class="wood-prop-val">Łagodny, owocowy</span>
+                  </div>
+                </div>
+                <p class="wood-desc">Lekkie, szybkoschnące drewno. Mało dymu i sadzy — doskonałe do kominków z otwartym paleniskiem i do wędzenia.</p>
+              </div>
             </div>
-            <h3>Ziemia ogrodowa</h3>
-            <p>Ziemia do ogrodu, rabat i prac porządkowych. Dostawy lokalne po wcześniejszej wycenie.</p>
-            <ul>
-              <li>Obsługa klientów indywidualnych i firm</li>
-              <li>Możliwość stałej współpracy</li>
-              <li>Wycena zależna od ilości i adresu</li>
-            </ul>
-          </article>
-          <article class="card animate-on-scroll">
-            <div class="card-icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+
+            <!-- Sezonowanie -->
+            <h4 class="tab-subtitle">Stopień sezonowania</h4>
+            <p class="tab-lead">Sezonowanie to kluczowy czynnik jakości — wpływa na kaloryczność, czystość spalania i ilość dymu. Oferujemy trzy poziomy:</p>
+            <div class="season-grid">
+              <div class="season-card">
+                <div class="season-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </div>
+                <h5>Świeże</h5>
+                <span class="season-humidity">Wilgotność 40–55%</span>
+                <p>Bezpośrednio po pozyskaniu. Wymaga suszenia 12–24 miesiące w zadaszeniu. Najkorzystniejsza cena — idealne, jeśli masz gdzie składować.</p>
+              </div>
+              <div class="season-card">
+                <div class="season-icon season-icon--mid">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </div>
+                <h5>Podsuszane</h5>
+                <span class="season-humidity">Wilgotność 25–35%</span>
+                <p>Sezonowane 6–12 miesięcy. Gotowe do spalania po krótkim dosuszeniu. Optymalny balans ceny i gotowości do użycia.</p>
+              </div>
+              <div class="season-card">
+                <div class="season-icon season-icon--dry">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/></svg>
+                </div>
+                <h5>Suche</h5>
+                <span class="season-humidity">Wilgotność &lt;20%</span>
+                <p>W pełni gotowe do spalania. Maksymalna kaloryczność, minimalny dym i osad w kominie. Pali się od razu po rozpakowaniu.</p>
+              </div>
             </div>
-            <h3>Kora ogrodowa</h3>
-            <p>Kora do ściółkowania i estetycznego wykończenia rabat. Oferta sezonowa i całoroczna.</p>
-            <ul>
-              <li>Oferta sezonowa i całoroczna</li>
-              <li>Dostawy z transportem na miejsce</li>
-              <li>Dostępność potwierdzana telefonicznie</li>
-            </ul>
-          </article>
-        </div>
+
+            <!-- Formaty -->
+            <h4 class="tab-subtitle">Dostępne formaty</h4>
+            <div class="format-grid">
+              <div class="format-item">
+                <strong>Metr nasypowy</strong>
+                <span>Drewno narzucane luzem — najczęściej wybierany format dla klientów indywidualnych.</span>
+              </div>
+              <div class="format-item">
+                <strong>Metr układany</strong>
+                <span>Drewno ułożone na palecie — dokładna miara, łatwe przechowywanie.</span>
+              </div>
+              <div class="format-item">
+                <strong>Drewno w wałkach</strong>
+                <span>Nierozcięte kłody, min. 20 m<sup>3</sup>. Dla klientów z własnym sprzętem do cięcia.</span>
+              </div>
+              <div class="format-item">
+                <strong>Rozpałka</strong>
+                <span>Drobno pocięte, suche szczapy do szybkiego rozpalenia ognia.</span>
+              </div>
+            </div>
+
+            <!-- Wskazówka przechowywania -->
+            <div class="tip-box">
+              <div class="tip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </div>
+              <div>
+                <strong>Jak przechowywać drewno?</strong>
+                <p>Składuj pod zadaszeniem z dobrą wentylacją. Nie kładź bezpośrednio na ziemi — użyj palet lub kantówek. Ułóż korą do góry, zostaw szpary między polanami. Dobrze przechowywane drewno sezonuje się 2× szybciej.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== ZAKŁADKA: KORA ===== -->
+          <div class="tab-panel" id="tab-kora">
+
+            <div class="tab-intro">
+              <h3>Kora ogrodowa</h3>
+              <p>Kora sosnowa to jeden z najprostszych sposobów, by ogród wyglądał zadbanie przez cały rok. Ściółkuje, chroni i dekoruje — a przy tym jest w 100% naturalnym produktem, który z czasem wzbogaca glebę w substancje organiczne.</p>
+            </div>
+
+            <!-- Frakcje -->
+            <h4 class="tab-subtitle">Dostępne frakcje</h4>
+            <p class="tab-lead">Wielkość kory dobieramy do zastosowania — drobna frakcja do rabat, gruba na ścieżki i place zabaw.</p>
+            <div class="bark-sizes">
+              <div class="bark-size">
+                <div class="bark-size-visual bark-small"></div>
+                <h5>Drobna</h5>
+                <span class="bark-range">10–20 mm</span>
+                <p>Do rabat kwiatowych, skrzynek balkonowych i jako delikatna ściółka wokół młodych nasadzeń.</p>
+              </div>
+              <div class="bark-size">
+                <div class="bark-size-visual bark-medium"></div>
+                <h5>Średnia</h5>
+                <span class="bark-range">20–40 mm</span>
+                <p>Najczęściej wybierana. Uniwersalna — do klombów, wokół drzew, krzewów i jako wykończenie powierzchni ogrodowych.</p>
+              </div>
+              <div class="bark-size">
+                <div class="bark-size-visual bark-large"></div>
+                <h5>Gruba</h5>
+                <span class="bark-range">40–80 mm</span>
+                <p>Do ścieżek ogrodowych, placów zabaw i dużych powierzchni. Najdłużej zachowuje strukturę, wolniej się rozkłada.</p>
+              </div>
+            </div>
+
+            <!-- Korzyści -->
+            <h4 class="tab-subtitle">Dlaczego warto ściółkować?</h4>
+            <div class="benefits-grid">
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </div>
+                <strong>Retencja wody</strong>
+                <p>Warstwa kory zmniejsza parowanie nawet o 70%. Rzadziej podlewasz, gleba dłużej pozostaje wilgotna.</p>
+              </div>
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                </div>
+                <strong>Hamowanie chwastów</strong>
+                <p>5–7 cm kory skutecznie blokuje wzrost chwastów. Koniec z ciągłym pieleniem — ogród utrzymuje się sam.</p>
+              </div>
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>
+                </div>
+                <strong>Izolacja termiczna</strong>
+                <p>Chroni korzenie przed mrozem zimą i przegrzaniem latem. Stabilizuje temperaturę gleby o 5–8°C.</p>
+              </div>
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <strong>Estetyka</strong>
+                <p>Ciepły, naturalny kolor kory natychmiast odmienia wygląd rabat. Ogród wygląda jak z katalogu.</p>
+              </div>
+            </div>
+
+            <!-- Zastosowania -->
+            <h4 class="tab-subtitle">Gdzie stosować korę?</h4>
+            <div class="use-cases">
+              <div class="use-case">
+                <span class="use-case-tag">Rabaty kwiatowe</span>
+                <span class="use-case-info">Warstwa 5–7 cm, frakcja drobna lub średnia</span>
+              </div>
+              <div class="use-case">
+                <span class="use-case-tag">Wokół drzew i krzewów</span>
+                <span class="use-case-info">Warstwa 7–10 cm, frakcja średnia</span>
+              </div>
+              <div class="use-case">
+                <span class="use-case-tag">Ścieżki ogrodowe</span>
+                <span class="use-case-info">Warstwa 8–12 cm, frakcja gruba</span>
+              </div>
+              <div class="use-case">
+                <span class="use-case-tag">Place zabaw</span>
+                <span class="use-case-info">Warstwa min. 15 cm, frakcja gruba — amortyzacja</span>
+              </div>
+              <div class="use-case">
+                <span class="use-case-tag">Skarpy i pochyłości</span>
+                <span class="use-case-info">Zapobiega erozji, stabilizuje grunt</span>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </div>
+              <div>
+                <strong>Ile kory potrzebujesz?</strong>
+                <p>Na 1 m² przy warstwie 5 cm zużyjesz ok. 50 litrów kory. Dla rabaty 20 m² to ok. 1 m<sup>3</sup>. Zadzwoń — pomożemy obliczyć dokładną ilość i dobierzemy frakcję do Twojego ogrodu.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== ZAKŁADKA: ZIEMIA ===== -->
+          <div class="tab-panel" id="tab-ziemia">
+
+            <div class="tab-intro">
+              <h3>Ziemia ogrodowa</h3>
+              <p>Dobra ziemia to fundament każdego ogrodu. Dostarczamy sprawdzone, żyzne podłoża bogate w próchnicę — gotowe do natychmiastowego użycia. Niezależnie czy zakładasz trawnik, sadzisz rośliny czy podnosisz teren, mamy rozwiązanie dopasowane do Twojego projektu.</p>
+            </div>
+
+            <!-- Typy ziemi -->
+            <h4 class="tab-subtitle">Co oferujemy</h4>
+            <div class="soil-types">
+              <div class="soil-type">
+                <div class="soil-badge">Uniwersalna</div>
+                <h5>Ziemia ogrodowa</h5>
+                <div class="soil-props">
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">pH</span>
+                    <span class="soil-prop-val">5.5–6.5</span>
+                  </div>
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">Próchnica</span>
+                    <span class="soil-prop-val">wysoka</span>
+                  </div>
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">Struktura</span>
+                    <span class="soil-prop-val">gruzełkowata</span>
+                  </div>
+                </div>
+                <p>Ziemia przesiana, bogata w próchnicę. Idealna do rabat, nasadzeń, podnoszenia terenu. Uniwersalne zastosowanie w każdym ogrodzie.</p>
+              </div>
+              <div class="soil-type">
+                <div class="soil-badge">Premium</div>
+                <h5>Ziemia kompostowa</h5>
+                <div class="soil-props">
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">pH</span>
+                    <span class="soil-prop-val">6.0–7.0</span>
+                  </div>
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">Próchnica</span>
+                    <span class="soil-prop-val">bardzo wysoka</span>
+                  </div>
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">Struktura</span>
+                    <span class="soil-prop-val">lekka, pulchna</span>
+                  </div>
+                </div>
+                <p>Dojrzały kompost naturalny — skarbnica składników odżywczych. Doskonała do warzyw, roślin ozdobnych i regeneracji wyjałowionej gleby.</p>
+              </div>
+              <div class="soil-type">
+                <div class="soil-badge">Specjalistyczna</div>
+                <h5>Ziemia pod trawnik</h5>
+                <div class="soil-props">
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">pH</span>
+                    <span class="soil-prop-val">5.5–6.5</span>
+                  </div>
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">Próchnica</span>
+                    <span class="soil-prop-val">średnia</span>
+                  </div>
+                  <div class="soil-prop">
+                    <span class="soil-prop-label">Struktura</span>
+                    <span class="soil-prop-val">drobna, wyrównana</span>
+                  </div>
+                </div>
+                <p>Przesiana i wyrównana ziemia do zakładania i renowacji trawników. Zapewnia równomierny wzrost i piękny efekt zielonego dywanu.</p>
+              </div>
+            </div>
+
+            <!-- Zastosowania -->
+            <h4 class="tab-subtitle">Gdzie wykorzystasz naszą ziemię?</h4>
+            <div class="soil-uses">
+              <div class="soil-use">
+                <div class="soil-use-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <strong>Zakładanie trawników</strong>
+                <p>Równomierna warstwa 10–15 cm pod siew lub rolki. Podłoże z optymalnym pH daje gęsty, zdrowy trawnik.</p>
+              </div>
+              <div class="soil-use">
+                <div class="soil-use-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                </div>
+                <strong>Rabaty i nasadzenia</strong>
+                <p>Ziemia kompostowa zapewnia roślinom ozdobnym bujny wzrost i intensywne kwitnienie od pierwszego sezonu.</p>
+              </div>
+              <div class="soil-use">
+                <div class="soil-use-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <strong>Ogród warzywny</strong>
+                <p>Próchnica i minerały dają warzywa pełne smaku. Kompostowa ziemia sprawdza się doskonale w podniesionych grządkach.</p>
+              </div>
+              <div class="soil-use">
+                <div class="soil-use-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+                </div>
+                <strong>Podnoszenie terenu</strong>
+                <p>Wyrównywanie i podnoszenie poziomu gruntu przy budowie domu lub zagospodarowaniu działki.</p>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </div>
+              <div>
+                <strong>Ile ziemi potrzebujesz?</strong>
+                <p>Na 1 m² przy warstwie 10 cm zużyjesz ok. 100 litrów (0,1 m<sup>3</sup>). Na trawnik 200 m² to ok. 20 m<sup>3</sup>. Zadzwoń — pomożemy obliczyć ilość z uwzględnieniem warunków Twojej działki.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.tabs -->
       </div>
     </section>
 
@@ -388,76 +718,6 @@
               <strong>Tomasz R.</strong>
               <span>Mińsk Mazowiecki</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Porównanie gatunków drewna -->
-    <section class="section section-dark">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow animate-on-scroll">Poradnik</p>
-          <h2 class="animate-on-scroll">Porównanie <span class="gold">gatunków drewna</span></h2>
-          <p class="lead animate-on-scroll">Dobierz gatunek do swoich potrzeb. Chętnie doradzimy telefonicznie.</p>
-        </div>
-        <div class="wood-types-grid">
-          <div class="wood-type animate-on-scroll">
-            <h3>Brzoza</h3>
-            <div class="wood-props">
-              <div class="wood-prop">
-                <span class="wood-prop-label">Kaloryczność</span>
-                <div class="wood-bar"><div class="wood-bar-fill" style="width:75%"></div></div>
-                <span class="wood-prop-val">~1900 kWh/mp</span>
-              </div>
-              <div class="wood-prop">
-                <span class="wood-prop-label">Czas schnięcia</span>
-                <span class="wood-prop-val">12–18 mies.</span>
-              </div>
-              <div class="wood-prop">
-                <span class="wood-prop-label">Zapach</span>
-                <span class="wood-prop-val">Przyjemny, delikatny</span>
-              </div>
-            </div>
-            <p class="wood-desc">Najpopularniejszy gatunek kominkowy. Łatwe rozpalanie, piękny płomień, przyjemny aromat.</p>
-          </div>
-          <div class="wood-type animate-on-scroll">
-            <h3>Dąb</h3>
-            <div class="wood-props">
-              <div class="wood-prop">
-                <span class="wood-prop-label">Kaloryczność</span>
-                <div class="wood-bar"><div class="wood-bar-fill" style="width:95%"></div></div>
-                <span class="wood-prop-val">~2100 kWh/mp</span>
-              </div>
-              <div class="wood-prop">
-                <span class="wood-prop-label">Czas schnięcia</span>
-                <span class="wood-prop-val">18–24 mies.</span>
-              </div>
-              <div class="wood-prop">
-                <span class="wood-prop-label">Zapach</span>
-                <span class="wood-prop-val">Intensywny, leśny</span>
-              </div>
-            </div>
-            <p class="wood-desc">Najwyższa kaloryczność. Długo się pali, daje dużo żaru. Idealny na mroźne wieczory.</p>
-          </div>
-          <div class="wood-type animate-on-scroll">
-            <h3>Olcha</h3>
-            <div class="wood-props">
-              <div class="wood-prop">
-                <span class="wood-prop-label">Kaloryczność</span>
-                <div class="wood-bar"><div class="wood-bar-fill" style="width:60%"></div></div>
-                <span class="wood-prop-val">~1500 kWh/mp</span>
-              </div>
-              <div class="wood-prop">
-                <span class="wood-prop-label">Czas schnięcia</span>
-                <span class="wood-prop-val">10–14 mies.</span>
-              </div>
-              <div class="wood-prop">
-                <span class="wood-prop-label">Zapach</span>
-                <span class="wood-prop-val">Łagodny, owocowy</span>
-              </div>
-            </div>
-            <p class="wood-desc">Lekkie, szybko schnie. Mało dymu i sadzy. Doskonałe do kominków z otwartym paleniskiem.</p>
           </div>
         </div>
       </div>

@@ -560,6 +560,498 @@ h2 {
 }
 
 /* ======================================
+   TABS — Zakładki produktowe
+   ====================================== */
+.tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  border-color: rgba(200,151,92,0.4);
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border-color: var(--gold);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(200,151,92,0.25);
+}
+
+.tab-btn svg {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.tab-btn.active svg,
+.tab-btn:hover svg {
+  opacity: 1;
+}
+
+/* Panele */
+.tab-panel {
+  display: none;
+  animation: tabFadeIn 0.5s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Intro */
+.tab-intro {
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+.tab-intro h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.tab-intro p {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.tab-subtitle {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin: 2.5rem 0 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.tab-lead {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 640px;
+}
+
+/* Sezonowanie — karty */
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.season-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.season-card:hover {
+  border-color: rgba(200,151,92,0.3);
+  transform: translateY(-4px);
+}
+
+.season-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, rgba(100,160,220,0.12), rgba(100,160,220,0.04));
+  color: #6aa0dc;
+}
+
+.season-icon--mid {
+  background: linear-gradient(135deg, rgba(200,151,92,0.12), rgba(200,151,92,0.04));
+  color: var(--gold);
+}
+
+.season-icon--dry {
+  background: linear-gradient(135deg, rgba(220,120,60,0.12), rgba(220,120,60,0.04));
+  color: #dc7840;
+}
+
+.season-card h5 {
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.season-humidity {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(200,151,92,0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+.season-card p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Formaty drewna */
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.format-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+}
+
+.format-item strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.format-item span {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Tip box */
+.tip-box {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(200,151,92,0.08), rgba(200,151,92,0.02));
+  border: 1px solid rgba(200,151,92,0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tip-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.tip-box strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.tip-box p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---- KORA: frakcje ---- */
+.bark-sizes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.bark-size {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.bark-size:hover {
+  border-color: rgba(200,151,92,0.3);
+  transform: translateY(-4px);
+}
+
+.bark-size-visual {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  position: relative;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  overflow: hidden;
+}
+
+.bark-size-visual::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bark-small::after { width: 14px; height: 14px; }
+.bark-medium::after { width: 26px; height: 26px; }
+.bark-large::after { width: 40px; height: 40px; }
+
+.bark-size h5 {
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.bark-range {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(200,151,92,0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+.bark-size p {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Kora: korzyści */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.benefit {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.benefit:hover {
+  border-color: rgba(200,151,92,0.3);
+}
+
+.benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(200,151,92,0.12), rgba(200,151,92,0.04));
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.benefit strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.benefit p {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Kora: zastosowania */
+.use-cases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.use-case {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.use-case-tag {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.use-case-info {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+/* ---- ZIEMIA: typy ---- */
+.soil-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.soil-type {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  transition: var(--transition);
+}
+
+.soil-type:hover {
+  border-color: rgba(200,151,92,0.3);
+  transform: translateY(-4px);
+}
+
+.soil-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  background: rgba(200,151,92,0.1);
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+.soil-type h5 {
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.soil-props {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.soil-prop {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+}
+
+.soil-prop-label {
+  color: var(--ink-soft);
+}
+
+.soil-prop-val {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.soil-type p {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Ziemia: zastosowania */
+.soil-uses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.soil-use {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.soil-use-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(200,151,92,0.12), rgba(200,151,92,0.04));
+  color: var(--gold);
+}
+
+.soil-use strong {
+  display: block;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.soil-use p {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ======================================
    TABLE / CENNIK
    ====================================== */
 .table-wrap {
@@ -1291,6 +1783,19 @@ tr:hover td {
   .cards { grid-template-columns: 1fr; }
   .card { padding: 1.8rem; }
 
+  /* Tabs responsive */
+  .tabs-nav { gap: 0.4rem; }
+  .tab-btn { padding: 0.7rem 1.2rem; font-size: 0.88rem; }
+  .tab-intro h3 { font-size: 1.35rem; }
+  .season-grid { grid-template-columns: 1fr; }
+  .format-grid { grid-template-columns: 1fr; }
+  .bark-sizes { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .soil-types { grid-template-columns: 1fr; }
+  .soil-uses { grid-template-columns: 1fr; }
+  .use-case { flex-direction: column; gap: 0.3rem; }
+  .use-case-info { text-align: left; }
+
   /* Tabela — układ kartowy na mobile */
   .table-wrap { overflow-x: visible; }
   table, thead, tbody, th, td, tr { display: block; }
@@ -1379,6 +1884,21 @@ tr:hover td {
   .card { padding: 1.5rem; }
   .card-icon { width: 50px; height: 50px; margin-bottom: 1rem; }
   .card-icon svg { width: 30px; height: 30px; }
+
+  /* Tabs 500px */
+  .tab-btn { padding: 0.6rem 1rem; font-size: 0.82rem; }
+  .tab-btn svg { width: 18px; height: 18px; }
+  .tab-intro h3 { font-size: 1.2rem; }
+  .tab-intro p { font-size: 0.9rem; }
+  .tab-subtitle { font-size: 1rem; margin-top: 2rem; }
+  .season-card { padding: 1.3rem; }
+  .season-card h5 { font-size: 1rem; }
+  .bark-size { padding: 1.3rem; }
+  .soil-type { padding: 1.3rem; }
+  .tip-box { flex-direction: column; gap: 0.7rem; padding: 1.2rem; }
+  .format-item { padding: 1rem; }
+  .benefit { padding: 1.2rem; }
+  .soil-use { gap: 0.7rem; }
 
   td { font-size: 0.82rem; }
   td::before { font-size: 0.72rem; }

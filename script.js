@@ -63,6 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ------- Zakładki produktowe -------
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('data-tab');
+
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const panel = document.getElementById('tab-' + tabId);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
   // ------- Back to top -------
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
