@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ------- Sezonowe Hero (X–II = drewno / III–IX = ogród) -------
   const month = new Date().getMonth(); // 0 = styczeń
-  const isGardenSeason = true; // SYMULACJA SEZONU OGRODOWEGO — przywróć: month >= 2 && month <= 8
+  const isGardenSeason = month >= 2 && month <= 8; // marzec(2)–wrzesień(8)
 
   if (isGardenSeason) {
     // Pokaż tło ogrodowe, ukryj ogień
