@@ -4,6 +4,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ------- Preloader -------
+  const preloader = document.getElementById('preloader');
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      preloader.classList.add('loaded');
+    }, 600);
+  });
+  // Fallback — ukryj po 3s nawet jeśli load nie odpali
+  setTimeout(() => preloader.classList.add('loaded'), 3000);
+
   // ------- Rok w stopce -------
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -53,14 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ------- Back to top -------
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // ------- Animacje na scroll (Intersection Observer) -------
   const animElements = document.querySelectorAll('.animate-on-scroll');
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Staggered delay based on index among siblings
           const siblings = entry.target.parentElement.querySelectorAll('.animate-on-scroll');
           let siblingIndex = 0;
           siblings.forEach((sib, i) => {
@@ -81,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animElements.forEach(el => observer.observe(el));
   } else {
-    // Fallback — pokaż bez animacji
     animElements.forEach(el => el.classList.add('visible'));
   }
 
@@ -109,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function update(now) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(eased * target);
       if (progress < 1) {
@@ -118,6 +141,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     requestAnimationFrame(update);
+  }
+
+  // ------- Gallery — pokaż więcej -------
+  const galleryMoreBtn = document.getElementById('galleryMoreBtn');
+  const galleryGrid = document.querySelector('.gallery-grid');
+
+  if (galleryMoreBtn && galleryGrid) {
+    galleryMoreBtn.addEventListener('click', () => {
+      galleryGrid.classList.toggle('gallery-expanded');
+      const expanded = galleryGrid.classList.contains('gallery-expanded');
+      galleryMoreBtn.innerHTML = expanded
+        ? 'Pokaż mniej <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>'
+        : 'Pokaż więcej zdjęć <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+      galleryMoreBtn.classList.toggle('rotated', expanded);
+
+      // Trigger animation on newly visible items
+      if (expanded) {
+        document.querySelectorAll('.gallery-hidden').forEach((item, i) => {
+          setTimeout(() => item.classList.add('visible'), i * 80);
+        });
+      }
+    });
   }
 
   // ------- Lightbox galerii -------
@@ -167,12 +212,30 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === lightbox) closeLightbox();
     });
 
+    // Klawiatura
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
     });
+
+    // Swipe na mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextImage();
+        else prevImage();
+      }
+    }, { passive: true });
   }
 
 });

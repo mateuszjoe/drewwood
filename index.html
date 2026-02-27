@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Drewwood - premium drewno kominkowe, drewno opałowe, ziemia ogrodowa i kora z dostawą na terenie Warszawy i okolic." />
-  <title>Drewwood | Drewno kominkowe, ziemia i kora - Warszawa i okolice</title>
+  <meta name="description" content="Drewwood - drewno kominkowe i opałowe z dostawą: Warszawa, Sulejówek, Mińsk Mazowiecki, Otwock, Józefów. Brzoza, dąb, olcha. Certyfikowane drewno z Lasów Państwowych." />
+  <meta name="keywords" content="drewno kominkowe Warszawa, drewno opałowe Sulejówek, drewno Mińsk Mazowiecki, drewno kominkowe dostawa, drewno brzozowe, drewno dębowe, ziemia ogrodowa, kora ogrodowa" />
+  <title>Drewwood | Drewno kominkowe z dostawą - Warszawa, Sulejówek, Mińsk Mazowiecki</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>" />
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-logo">DREWWOOD</span>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
 
   <!-- Nawigacja -->
   <nav class="nav" id="navbar">
@@ -218,6 +228,18 @@
       </div>
     </section>
 
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="container cta-content animate-on-scroll">
+        <h2>Zamów drewno z dostawą<br><span class="gold">pod sam dom</span></h2>
+        <p>Szybka wycena, krótkie terminy, profesjonalna obsługa od A do Z.</p>
+        <a class="btn btn-gold btn-lg" href="tel:+48736764460">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Zadzwoń: 736 764 460
+        </a>
+      </div>
+    </section>
+
     <!-- Galeria -->
     <section id="galeria" class="section section-dark">
       <div class="container">
@@ -225,43 +247,86 @@
           <p class="eyebrow animate-on-scroll">Galeria</p>
           <h2 class="animate-on-scroll">Nasze <span class="gold">realizacje</span></h2>
         </div>
-        <div class="gallery-grid">
-          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0091a.jpg">
+        <div class="gallery-grid gallery-masonry">
+          <div class="gallery-item gallery-wide animate-on-scroll" data-src="Zdj%C4%99cia/d0368dfc-a9cc-4843-bf59-91c665c3a7b2.jpg">
+            <img src="Zdj%C4%99cia/d0368dfc-a9cc-4843-bf59-91c665c3a7b2.jpg" alt="Drewno w wiacie" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/12b23b8a-afc9-4013-9b7f-112a8f68c4fc.jpg">
+            <img src="Zdj%C4%99cia/12b23b8a-afc9-4013-9b7f-112a8f68c4fc.jpg" alt="Dostawa drewna" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/a07b4aa4-df41-4194-bd4e-1d781088719b.jpg">
+            <img src="Zdj%C4%99cia/a07b4aa4-df41-4194-bd4e-1d781088719b.jpg" alt="Ułożone drewno" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/403137f1-8879-4d5e-8a60-dac536e10864.jpg">
+            <img src="Zdj%C4%99cia/403137f1-8879-4d5e-8a60-dac536e10864.jpg" alt="Drewno kominkowe" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/9cd9ca56-fdc9-4c6b-9d56-86b6d44e8597.jpg">
+            <img src="Zdj%C4%99cia/9cd9ca56-fdc9-4c6b-9d56-86b6d44e8597.jpg" alt="Transport drewna" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item gallery-wide animate-on-scroll" data-src="Zdj%C4%99cia/aa16524b-7afd-42b8-a3ae-196d4a2cd644.jpg">
+            <img src="Zdj%C4%99cia/aa16524b-7afd-42b8-a3ae-196d4a2cd644.jpg" alt="Drewno w garażu" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/1f635e12-b60a-4e0a-8224-5ec1c5adc441.jpg">
+            <img src="Zdj%C4%99cia/1f635e12-b60a-4e0a-8224-5ec1c5adc441.jpg" alt="Transport bali" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/3186e3a5-9b2f-4f06-9bd8-0c07ef73b641.jpg">
+            <img src="Zdj%C4%99cia/3186e3a5-9b2f-4f06-9bd8-0c07ef73b641.jpg" alt="Drewno pod domem" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/e93bb90e-4ed1-4c72-a284-6035e752872b.jpg">
+            <img src="Zdj%C4%99cia/e93bb90e-4ed1-4c72-a284-6035e752872b.jpg" alt="Drewutnia" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <!-- Ukryte - pokaż więcej -->
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/d4ae625a-1538-4ce7-b377-9d5b2f7bad3b.jpg">
+            <img src="Zdj%C4%99cia/d4ae625a-1538-4ce7-b377-9d5b2f7bad3b.jpg" alt="Transport drewna TIR" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/c8eae58f-e8e7-4be0-8b75-d1fb3cb02cda.jpg">
+            <img src="Zdj%C4%99cia/c8eae58f-e8e7-4be0-8b75-d1fb3cb02cda.jpg" alt="Stos drewna w lesie" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/7cb4178b-fee1-42da-ba18-293c6c1c9d1a.jpg">
+            <img src="Zdj%C4%99cia/7cb4178b-fee1-42da-ba18-293c6c1c9d1a.jpg" alt="Drewno przy domu" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/46b8c03a-3722-400d-a6ef-7f8e0fe0be6c.jpg">
+            <img src="Zdj%C4%99cia/46b8c03a-3722-400d-a6ef-7f8e0fe0be6c.jpg" alt="Stos bali" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-item gallery-wide gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0091a.jpg">
             <img src="Zdj%C4%99cia/IMG_0091a.jpg" alt="Drewno kominkowe premium" loading="lazy" />
-            <div class="gallery-overlay">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
           </div>
-          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0022.jpg">
-            <img src="Zdj%C4%99cia/IMG_0022.jpg" alt="Drewno opałowe 1" loading="lazy" />
-            <div class="gallery-overlay">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0022.jpg">
+            <img src="Zdj%C4%99cia/IMG_0022.jpg" alt="Drewno opałowe" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
           </div>
-          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0023.jpg">
-            <img src="Zdj%C4%99cia/IMG_0023.jpg" alt="Drewno opałowe 2" loading="lazy" />
-            <div class="gallery-overlay">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0023.jpg">
+            <img src="Zdj%C4%99cia/IMG_0023.jpg" alt="Drewno opałowe" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
           </div>
-          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0024.jpg">
-            <img src="Zdj%C4%99cia/IMG_0024.jpg" alt="Drewno opałowe 3" loading="lazy" />
-            <div class="gallery-overlay">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0024.jpg">
+            <img src="Zdj%C4%99cia/IMG_0024.jpg" alt="Drewno opałowe" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
           </div>
-          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0025.jpg">
-            <img src="Zdj%C4%99cia/IMG_0025.jpg" alt="Drewno opałowe 4" loading="lazy" />
-            <div class="gallery-overlay">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
+          <div class="gallery-item gallery-hidden animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0968.jpg">
+            <img src="Zdj%C4%99cia/IMG_0968.jpg" alt="Drewno opałowe" loading="lazy" />
+            <div class="gallery-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
           </div>
-          <div class="gallery-item animate-on-scroll" data-src="Zdj%C4%99cia/IMG_0968.jpg">
-            <img src="Zdj%C4%99cia/IMG_0968.jpg" alt="Drewno opałowe 5" loading="lazy" />
-            <div class="gallery-overlay">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-            </div>
-          </div>
+        </div>
+        <div class="gallery-more-wrap animate-on-scroll">
+          <button class="btn btn-outline gallery-more-btn" id="galleryMoreBtn">
+            Pokaż więcej zdjęć
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -274,8 +339,161 @@
       <img class="lightbox-img" id="lightboxImg" src="" alt="Powiększone zdjęcie" />
     </div>
 
+    <!-- Opinie klientów -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow animate-on-scroll">Opinie</p>
+          <h2 class="animate-on-scroll">Co mówią <span class="gold">nasi klienci</span></h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial animate-on-scroll">
+            <div class="testimonial-stars">
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"Drewno świetnej jakości, suche i czyste. Dostawa na czas, panowie sami ułożyli pod wiatą. Polecam każdemu kto szuka solidnego dostawcy."</p>
+            <div class="testimonial-author">
+              <strong>Marek K.</strong>
+              <span>Warszawa Wawer</span>
+            </div>
+          </div>
+          <div class="testimonial animate-on-scroll">
+            <div class="testimonial-stars">
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"Zamawiam regularnie drewno brzozowe od Drewwood. Zawsze ta sama wysoka jakość, uczciwa miara. Kontakt telefoniczny szybki i rzeczowy."</p>
+            <div class="testimonial-author">
+              <strong>Anna W.</strong>
+              <span>Sulejówek</span>
+            </div>
+          </div>
+          <div class="testimonial animate-on-scroll">
+            <div class="testimonial-stars">
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="16" height="16" fill="#c8975c" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-text">"Potrzebowałem 5m3 drewna dębowego na cały sezon. Dostawa następnego dnia, drewno pięknie pocięte i podsuszone. Zdecydowanie wracam!"</p>
+            <div class="testimonial-author">
+              <strong>Tomasz R.</strong>
+              <span>Mińsk Mazowiecki</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Porównanie gatunków drewna -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow animate-on-scroll">Poradnik</p>
+          <h2 class="animate-on-scroll">Porównanie <span class="gold">gatunków drewna</span></h2>
+          <p class="lead animate-on-scroll">Dobierz gatunek do swoich potrzeb. Chętnie doradzimy telefonicznie.</p>
+        </div>
+        <div class="wood-types-grid">
+          <div class="wood-type animate-on-scroll">
+            <h3>Brzoza</h3>
+            <div class="wood-props">
+              <div class="wood-prop">
+                <span class="wood-prop-label">Kaloryczność</span>
+                <div class="wood-bar"><div class="wood-bar-fill" style="width:75%"></div></div>
+                <span class="wood-prop-val">~1900 kWh/mp</span>
+              </div>
+              <div class="wood-prop">
+                <span class="wood-prop-label">Czas schnięcia</span>
+                <span class="wood-prop-val">12–18 mies.</span>
+              </div>
+              <div class="wood-prop">
+                <span class="wood-prop-label">Zapach</span>
+                <span class="wood-prop-val">Przyjemny, delikatny</span>
+              </div>
+            </div>
+            <p class="wood-desc">Najpopularniejszy gatunek kominkowy. Łatwe rozpalanie, piękny płomień, przyjemny aromat.</p>
+          </div>
+          <div class="wood-type animate-on-scroll">
+            <h3>Dąb</h3>
+            <div class="wood-props">
+              <div class="wood-prop">
+                <span class="wood-prop-label">Kaloryczność</span>
+                <div class="wood-bar"><div class="wood-bar-fill" style="width:95%"></div></div>
+                <span class="wood-prop-val">~2100 kWh/mp</span>
+              </div>
+              <div class="wood-prop">
+                <span class="wood-prop-label">Czas schnięcia</span>
+                <span class="wood-prop-val">18–24 mies.</span>
+              </div>
+              <div class="wood-prop">
+                <span class="wood-prop-label">Zapach</span>
+                <span class="wood-prop-val">Intensywny, leśny</span>
+              </div>
+            </div>
+            <p class="wood-desc">Najwyższa kaloryczność. Długo się pali, daje dużo żaru. Idealny na mroźne wieczory.</p>
+          </div>
+          <div class="wood-type animate-on-scroll">
+            <h3>Olcha</h3>
+            <div class="wood-props">
+              <div class="wood-prop">
+                <span class="wood-prop-label">Kaloryczność</span>
+                <div class="wood-bar"><div class="wood-bar-fill" style="width:60%"></div></div>
+                <span class="wood-prop-val">~1500 kWh/mp</span>
+              </div>
+              <div class="wood-prop">
+                <span class="wood-prop-label">Czas schnięcia</span>
+                <span class="wood-prop-val">10–14 mies.</span>
+              </div>
+              <div class="wood-prop">
+                <span class="wood-prop-label">Zapach</span>
+                <span class="wood-prop-val">Łagodny, owocowy</span>
+              </div>
+            </div>
+            <p class="wood-desc">Lekkie, szybko schnie. Mało dymu i sadzy. Doskonałe do kominków z otwartym paleniskiem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Obszar dostaw -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow animate-on-scroll">Zasięg</p>
+          <h2 class="animate-on-scroll">Obszar <span class="gold">naszych dostaw</span></h2>
+          <p class="lead animate-on-scroll">Dostarczamy drewno na terenie Warszawy i okolic w promieniu 50 km.</p>
+        </div>
+        <div class="delivery-areas animate-on-scroll">
+          <div class="delivery-area">
+            <h4>Warszawa</h4>
+            <p>Wawer, Wesoła, Rembertów, Praga Południe, Praga Północ, Targówek, Białołęka, Wilanów, Ursynów</p>
+          </div>
+          <div class="delivery-area">
+            <h4>Powiat miński</h4>
+            <p>Mińsk Mazowiecki, Sulejówek, Halinów, Dębe Wielkie, Cegłów, Siennica</p>
+          </div>
+          <div class="delivery-area">
+            <h4>Powiat otwocki</h4>
+            <p>Otwock, Józefów, Karczew, Wiązowna, Celestynów, Sobienie-Jeziory</p>
+          </div>
+          <div class="delivery-area">
+            <h4>Pozostałe</h4>
+            <p>Marki, Ząbki, Zielonka, Kobyłka, Wołomin, Radzymin, Legionowo i inne w zasięgu 50 km</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Kontakt -->
-    <section id="kontakt" class="section">
+    <section id="kontakt" class="section section-dark">
       <div class="container">
         <div class="section-header">
           <p class="eyebrow animate-on-scroll">Kontakt</p>
@@ -372,6 +590,31 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Wróć na górę">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Schema.org SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Drewwood",
+    "description": "Drewno kominkowe i opałowe z dostawą na terenie Warszawy i okolic. Brzoza, dąb, olcha. Certyfikowane drewno z Lasów Państwowych.",
+    "url": "https://drewwood.com.pl",
+    "telephone": "+48736764460",
+    "email": "drewwood@o2.pl",
+    "openingHours": "Mo-Sa 08:00-19:00",
+    "areaServed": [
+      "Warszawa", "Sulejówek", "Mińsk Mazowiecki", "Otwock", "Józefów",
+      "Halinów", "Wiązowna", "Marki", "Ząbki", "Wołomin"
+    ],
+    "priceRange": "$$",
+    "image": "https://mateuszjoe.github.io/drewwood/Zdj%C4%99cia/IMG_0091a.jpg"
+  }
+  </script>
 
   <script src="script.js"></script>
 </body>
