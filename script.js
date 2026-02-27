@@ -18,6 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // ------- Sezonowe Hero (X–II = drewno / III–IX = ogród) -------
+  const month = new Date().getMonth(); // 0 = styczeń
+  const isGardenSeason = month >= 2 && month <= 8; // marzec(2)–wrzesień(8)
+
+  if (isGardenSeason) {
+    // Pokaż tło ogrodowe, ukryj ogień
+    const bgFire = document.querySelector('.hero-bg-fire');
+    const bgGarden = document.querySelector('.hero-bg-garden');
+    if (bgFire) bgFire.style.opacity = '0';
+    if (bgGarden) bgGarden.style.opacity = '1';
+
+    // Zamień treści
+    document.querySelectorAll('.hero-heading-fire, .hero-lead-fire').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = '');
+
+    // Zmień CTA
+    const secondaryCta = document.querySelector('.hero-cta-secondary');
+    if (secondaryCta) {
+      secondaryCta.textContent = 'Zobacz ofertę';
+      secondaryCta.href = '#oferta';
+    }
+  }
+
   // ------- Nawigacja — scroll efekt -------
   const navbar = document.getElementById('navbar');
 

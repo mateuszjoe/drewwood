@@ -41,27 +41,41 @@
 
   <main id="start">
 
-    <!-- Hero z video w tle -->
-    <section class="hero">
-      <div class="hero-video-wrap">
+    <!-- Hero — dynamiczne tło i treść wg sezonu -->
+    <section class="hero" id="hero">
+      <!-- Tło: sezon grzewczy (X–II) -->
+      <div class="hero-video-wrap hero-bg-fire">
         <video autoplay muted loop playsinline class="hero-video">
           <source src="video/hero-bg.mp4" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
       </div>
+      <!-- Tło: sezon ogrodowy (III–IX) -->
+      <div class="hero-video-wrap hero-bg-garden" style="opacity:0">
+        <img src="Zdj%C4%99cia/hero_ziemia-kora.png" alt="Ziemia ogrodowa i kora" class="hero-video" />
+        <div class="hero-overlay"></div>
+      </div>
+
       <div class="container hero-content">
         <p class="hero-eyebrow animate-fade-up">Warszawa i okolice</p>
-        <h1 class="animate-fade-up delay-1">Drewno kominkowe<br><span class="gold">najwyższej jakości</span></h1>
-        <p class="hero-lead animate-fade-up delay-2">
+        <!-- Treść: sezon grzewczy -->
+        <h1 class="hero-heading hero-heading-fire animate-fade-up delay-1">Drewno kominkowe<br><span class="gold">najwyższej jakości</span></h1>
+        <p class="hero-lead hero-lead-fire animate-fade-up delay-2">
           Dostarczamy certyfikowane drewno kominkowe z lasów państwowych.
           Profesjonalna obsługa, szybka dostawa, gwarancja jakości.
+        </p>
+        <!-- Treść: sezon ogrodowy -->
+        <h1 class="hero-heading hero-heading-garden animate-fade-up delay-1" style="display:none">Ziemia i kora<br><span class="gold">dla Twojego ogrodu</span></h1>
+        <p class="hero-lead hero-lead-garden animate-fade-up delay-2" style="display:none">
+          Przygotuj ogród na nowy sezon. Żyzna ziemia, naturalna kora sosnowa
+          — dostarczamy pod dom w Warszawie i okolicach.
         </p>
         <div class="hero-actions animate-fade-up delay-3">
           <a class="btn btn-gold" href="tel:+48736764460">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Zadzwoń teraz
           </a>
-          <a class="btn btn-outline" href="#cennik">Sprawdź cennik</a>
+          <a class="btn btn-outline hero-cta-secondary" href="#cennik">Sprawdź cennik</a>
         </div>
       </div>
       <a href="#o-nas" class="scroll-indicator" aria-label="Przewiń w dół">

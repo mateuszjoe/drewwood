@@ -45,6 +45,22 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
+/* Zapobieganie zaznaczaniu tekstu przy scrollowaniu suwakiem */
+.hero,
+.nav,
+.section-header,
+.btn,
+.tab-btn,
+.scroll-indicator,
+.back-to-top,
+.preloader,
+.stats-grid,
+.gallery-item,
+.gallery-overlay {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -262,9 +278,11 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   z-index: 1;
+  transition: opacity 0.8s ease;
 }
 
-.hero-video {
+.hero-video,
+.hero-video-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
