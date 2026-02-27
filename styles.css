@@ -1130,12 +1130,6 @@ tr:hover td {
 /* ======================================
    GALLERY MASONRY
    ====================================== */
-.gallery-masonry {
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 250px;
-  gap: 1rem;
-}
-
 .gallery-wide {
   grid-column: span 2;
 }
@@ -1297,11 +1291,42 @@ tr:hover td {
   .cards { grid-template-columns: 1fr; }
   .card { padding: 1.8rem; }
 
-  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  table { min-width: 500px; }
+  /* Tabela — układ kartowy na mobile */
+  .table-wrap { overflow-x: visible; }
+  table, thead, tbody, th, td, tr { display: block; }
+  thead { display: none; }
 
-  .gallery-masonry { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; gap: 0.8rem; }
-  .gallery-wide { grid-column: span 1; }
+  tr {
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 1.2rem;
+  }
+  tr:last-child { border-bottom: none; }
+
+  td {
+    padding: 0.3rem 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--gold);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  td:last-child {
+    margin-top: 0.4rem;
+  }
+
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .gallery-wide { grid-column: span 2; }
 
   .cta-banner { padding: 3.5rem 0; }
   .cta-banner h2 br { display: none; }
@@ -1355,9 +1380,11 @@ tr:hover td {
   .card-icon { width: 50px; height: 50px; margin-bottom: 1rem; }
   .card-icon svg { width: 30px; height: 30px; }
 
-  th, td { padding: 0.8rem 1rem; font-size: 0.85rem; }
+  td { font-size: 0.82rem; }
+  td::before { font-size: 0.72rem; }
 
-  .gallery-masonry { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; gap: 0.6rem; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .gallery-wide { grid-column: span 1; }
   .gallery-item { border-radius: var(--radius); }
 
   .cta-content p { font-size: 0.95rem; }
@@ -1394,7 +1421,8 @@ tr:hover td {
   .container { padding: 0 0.75rem; }
   .hero h1 { font-size: 1.7rem; }
   .stats-grid { gap: 1rem; }
-  .gallery-masonry { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-wide { grid-column: span 1; }
   .testimonial { padding: 1.2rem; }
   .wood-type { padding: 1.2rem; }
   .delivery-area { padding: 1rem; }
