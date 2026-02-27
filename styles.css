@@ -227,6 +227,28 @@ ul { list-style: none; }
   box-shadow: 0 4px 20px rgba(200,151,92,0.4);
 }
 
+/* Season toggle — DEV ONLY */
+.season-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.06);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.season-toggle:hover {
+  background: rgba(200,151,92,0.15);
+  border-color: var(--gold);
+  transform: scale(1.1);
+}
+
 /* Hamburger */
 .menu-toggle {
   display: none;

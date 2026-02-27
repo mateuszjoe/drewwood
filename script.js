@@ -20,25 +20,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ------- Sezonowe Hero (X–II = drewno / III–IX = ogród) -------
   const month = new Date().getMonth(); // 0 = styczeń
-  const isGardenSeason = month >= 2 && month <= 8; // marzec(2)–wrzesień(8)
+  let currentSeason = (month >= 2 && month <= 8) ? 'garden' : 'fire';
 
-  if (isGardenSeason) {
-    // Pokaż tło ogrodowe, ukryj ogień
+  function applySeason(season) {
     const bgFire = document.querySelector('.hero-bg-fire');
     const bgGarden = document.querySelector('.hero-bg-garden');
-    if (bgFire) bgFire.style.opacity = '0';
-    if (bgGarden) bgGarden.style.opacity = '1';
+    const toggle = document.getElementById('seasonToggle');
 
-    // Zamień treści
-    document.querySelectorAll('.hero-heading-fire, .hero-lead-fire').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = '');
-
-    // Zmień CTA
-    const secondaryCta = document.querySelector('.hero-cta-secondary');
-    if (secondaryCta) {
-      secondaryCta.textContent = 'Zobacz ofertę';
-      secondaryCta.href = '#oferta';
+    if (season === 'garden') {
+      if (bgFire) bgFire.style.opacity = '0';
+      if (bgGarden) bgGarden.style.opacity = '1';
+      document.querySelectorAll('.hero-heading-fire, .hero-lead-fire').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = '');
+      const cta = document.querySelector('.hero-cta-secondary');
+      if (cta) { cta.textContent = 'Zobacz ofertę'; cta.href = '#oferta'; }
+      if (toggle) toggle.textContent = '🌱';
+    } else {
+      if (bgFire) bgFire.style.opacity = '1';
+      if (bgGarden) bgGarden.style.opacity = '0';
+      document.querySelectorAll('.hero-heading-fire, .hero-lead-fire').forEach(el => el.style.display = '');
+      document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = 'none');
+      const cta = document.querySelector('.hero-cta-secondary');
+      if (cta) { cta.textContent = 'Sprawdź cennik'; cta.href = '#cennik'; }
+      if (toggle) toggle.textContent = '🔥';
     }
+    currentSeason = season;
+  }
+
+  applySeason(currentSeason);
+
+  // DEV: przełącznik sezonu
+  const seasonToggle = document.getElementById('seasonToggle');
+  if (seasonToggle) {
+    seasonToggle.addEventListener('click', () => {
+      applySeason(currentSeason === 'fire' ? 'garden' : 'fire');
+    });
   }
 
   // ------- Nawigacja — scroll efekt -------
