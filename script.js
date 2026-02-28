@@ -119,6 +119,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ------- Zakładki cennika -------
+  const cennikTabs = document.querySelectorAll('.cennik-tab');
+  const cennikPanels = document.querySelectorAll('.cennik-panel');
+
+  cennikTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-cennik');
+
+      cennikTabs.forEach(t => t.classList.remove('active'));
+      cennikPanels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const panel = document.getElementById('cennik-' + target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
   // ------- FAQ Accordion -------
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {

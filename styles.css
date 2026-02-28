@@ -1092,62 +1092,355 @@ h2 {
 }
 
 /* ======================================
-   TABLE / CENNIK
+   CENNIK — TRANSPORT BANNER + TABS + CARDS
    ====================================== */
-.table-wrap {
+
+/* Transport banner */
+.transport-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(200,151,92,0.12), rgba(200,151,92,0.04));
+  border: 1px solid rgba(200,151,92,0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.transport-banner svg {
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+.transport-banner strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.transport-banner span {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+/* Cennik tabs */
+.cennik-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cennik-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  background: var(--bg-card);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--ff-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cennik-tab:hover {
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
+.cennik-tab.active {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+
+.cennik-tab svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Cennik panels */
+.cennik-panel {
+  display: none;
+}
+
+.cennik-panel.active {
+  display: block;
+}
+
+/* Existing price cards grid */
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.price-card {
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-th, td {
-  text-align: left;
-  padding: 1.1rem 1.4rem;
-  word-break: break-word;
+/* Wyróżniona karta */
+.price-card--featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), var(--shadow);
 }
 
-th {
-  background: rgba(200,151,92,0.08);
-  color: var(--gold);
-  font-weight: 600;
-  font-size: 0.9rem;
+.price-card--featured:hover {
+  box-shadow: 0 0 0 1px var(--gold), 0 20px 40px rgba(200,151,92,0.2);
+}
+
+.price-card-badge {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.9rem 0.4rem;
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 
-td {
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+/* Nagłówek karty */
+.price-card-header {
+  text-align: center;
+  padding: 2rem 1.5rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-card-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.price-card-header h3 {
+  font-family: var(--ff-accent);
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+
+.price-card-sub {
+  font-size: 0.82rem;
   color: var(--ink-soft);
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
-tr:last-child td { border-bottom: none; }
-
-tr:hover td {
-  background: rgba(200,151,92,0.03);
+/* Lista cen */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.badge {
-  display: inline-block;
-  background: linear-gradient(135deg, rgba(200,151,92,0.15), rgba(200,151,92,0.05));
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s ease;
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+.price-list li:hover {
+  background: rgba(200,151,92,0.04);
+}
+
+.wood-name {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.wood-price {
   color: var(--gold);
-  padding: 0.3rem 0.9rem;
-  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Stopka karty */
+.price-card-footer {
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+.btn-sm {
+  padding: 0.55rem 1.6rem;
   font-size: 0.85rem;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius);
+  cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold);
+  color: var(--bg);
 }
 
 .price-note {
   text-align: center;
-  margin-top: 2rem;
-  font-size: 1.05rem;
+  margin-top: 2.5rem;
+  font-size: 1rem;
   color: var(--ink-soft);
+}
+
+/* Single-product card (kora, ziemia) */
+.cennik-single {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.cennik-single-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--gold), var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cennik-single-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 1px var(--gold), 0 20px 40px rgba(200,151,92,0.2);
+}
+
+.cennik-big-price-wrap {
+  text-align: center;
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.cennik-big-price {
+  font-family: var(--ff-accent);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.cennik-unit {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+}
+
+.cennik-features {
+  list-style: none;
+  padding: 0.8rem 1.5rem 1.2rem;
+  margin: 0;
+}
+
+.cennik-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.cennik-features li:last-child {
+  border-bottom: none;
+}
+
+.cennik-features li svg {
+  flex-shrink: 0;
+}
+
+.cennik-extra-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* Inquiry grid (ziemia) */
+.cennik-more {
+  margin-top: 2.5rem;
+}
+
+.cennik-more h4 {
+  text-align: center;
+  color: var(--ink);
+  font-family: var(--ff-accent);
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+}
+
+.cennik-inquiry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.cennik-inquiry-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+  transition: border-color 0.3s ease;
+}
+
+.cennik-inquiry-item:hover {
+  border-color: var(--gold);
+}
+
+.cennik-inquiry-item strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.cennik-inquiry-item span {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.cennik-inquiry-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.cennik-inquiry-cta .btn {
+  gap: 0.4rem;
 }
 
 /* ======================================
@@ -1619,6 +1912,94 @@ tr:hover td {
 }
 
 /* ======================================
+   TRUST BADGES
+   ====================================== */
+.trust-strip {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.trust-badge svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ======================================
+   PROCESS STEPS (4 kroki)
+   ====================================== */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.process-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--bg);
+  font-family: var(--ff-accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(50% + 34px);
+  width: calc(100% - 68px);
+  height: 2px;
+  background: var(--line);
+  z-index: 0;
+}
+
+.process-step h4 {
+  font-family: var(--ff-accent);
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* ======================================
    CTA BANNER
    ====================================== */
 .cta-banner {
@@ -1860,6 +2241,16 @@ tr:hover td {
 @media (max-width: 1024px) {
   .about-grid { gap: 2.5rem; }
   .about-image img { height: 400px; }
+
+  .price-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .price-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    justify-self: center;
+    width: 100%;
+  }
 }
 
 @media (max-width: 920px) {
@@ -1913,6 +2304,20 @@ tr:hover td {
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .stat::after { display: none; }
 
+  /* Trust badges mobile */
+  .trust-badges {
+    gap: 1.2rem 2rem;
+    justify-content: center;
+  }
+  .trust-badge { font-size: 0.82rem; }
+
+  /* Process steps mobile */
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.5rem;
+  }
+  .process-step:not(:last-child)::after { display: none; }
+
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .about-image img { height: 280px; }
   .about-text h2 br { display: none; }
@@ -1934,38 +2339,35 @@ tr:hover td {
   .use-case { flex-direction: column; gap: 0.3rem; }
   .use-case-info { text-align: left; }
 
-  /* Tabela — układ kartowy na mobile */
-  .table-wrap { overflow-x: visible; }
-  table, thead, tbody, th, td, tr { display: block; }
-  thead { display: none; }
-
-  tr {
-    border-bottom: 1px solid var(--line);
+  /* Cennik — mobile */
+  .transport-banner {
     padding: 1rem 1.2rem;
-  }
-  tr:last-child { border-bottom: none; }
-
-  td {
-    padding: 0.3rem 0;
-    border-bottom: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
 
-  td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--gold);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    flex-shrink: 0;
+  .cennik-tabs {
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 
-  td:last-child {
-    margin-top: 0.4rem;
+  .cennik-tab {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem;
+  }
+
+  .price-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .price-card--featured {
+    order: -1;
+  }
+
+  .cennik-inquiry-grid {
+    grid-template-columns: 1fr;
   }
 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
@@ -2013,6 +2415,15 @@ tr:hover td {
   .section { padding: 3rem 0; }
   .section-header { margin-bottom: 2rem; }
   h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  .trust-badges { gap: 1rem; }
+  .trust-badge { flex: 0 0 calc(50% - 0.5rem); font-size: 0.78rem; }
+  .trust-badge svg { width: 20px; height: 20px; }
+  .trust-strip { padding: 1.5rem 0; }
+
+  .process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  .process-number { width: 48px; height: 48px; font-size: 1.1rem; margin-bottom: 0.8rem; }
+  .process-step h4 { font-size: 1rem; }
   h2 br { display: none; }
 
   .stat-number { font-size: clamp(1.8rem, 8vw, 2.5rem); }
@@ -2040,8 +2451,16 @@ tr:hover td {
   .benefit { padding: 1.2rem; }
   .soil-use { gap: 0.7rem; }
 
-  td { font-size: 0.82rem; }
-  td::before { font-size: 0.72rem; }
+  .price-card-header { padding: 1.5rem 1.2rem 1rem; }
+  .price-list li { padding: 0.7rem 1.2rem; }
+  .price-card-footer { padding: 1rem 1.2rem; }
+  .wood-name { font-size: 0.88rem; }
+  .wood-price { font-size: 0.92rem; }
+
+  .cennik-big-price { font-size: 2.8rem; }
+  .cennik-features li { font-size: 0.85rem; }
+  .cennik-features { padding: 0.8rem 1.2rem 1rem; }
+  .cennik-single { max-width: 100%; }
 
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
   .gallery-wide { grid-column: span 1; }
