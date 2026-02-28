@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function applySeason(season) {
     const bgFire = document.querySelector('.hero-bg-fire');
     const bgGarden = document.querySelector('.hero-bg-garden');
-    const toggle = document.getElementById('seasonToggle');
 
     if (season === 'garden') {
       if (bgFire) bgFire.style.opacity = '0';
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = '');
       const cta = document.querySelector('.hero-cta-secondary');
       if (cta) { cta.textContent = 'Zobacz ofertę'; cta.href = '#oferta'; }
-      if (toggle) toggle.textContent = '🌱';
     } else {
       if (bgFire) bgFire.style.opacity = '1';
       if (bgGarden) bgGarden.style.opacity = '0';
@@ -42,20 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = 'none');
       const cta = document.querySelector('.hero-cta-secondary');
       if (cta) { cta.textContent = 'Sprawdź cennik'; cta.href = '#cennik'; }
-      if (toggle) toggle.textContent = '🔥';
     }
-    currentSeason = season;
   }
 
   applySeason(currentSeason);
-
-  // DEV: przełącznik sezonu
-  const seasonToggle = document.getElementById('seasonToggle');
-  if (seasonToggle) {
-    seasonToggle.addEventListener('click', () => {
-      applySeason(currentSeason === 'fire' ? 'garden' : 'fire');
-    });
-  }
 
   // ------- Nawigacja — scroll efekt -------
   const navbar = document.getElementById('navbar');
