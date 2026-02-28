@@ -1726,6 +1726,104 @@ tr:hover td {
 }
 
 /* ======================================
+   FAQ
+   ====================================== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.faq-item.open {
+  border-color: rgba(200,151,92,0.35);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.faq-question:hover { color: var(--gold); }
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 1.5rem 1.3rem;
+}
+
+.faq-answer p {
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+/* ======================================
+   WHATSAPP FLOAT
+   ====================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 90;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+}
+
+/* ======================================
    ANIMATIONS
    ====================================== */
 
@@ -1877,6 +1975,8 @@ tr:hover td {
   .cta-banner h2 br { display: none; }
 
   .back-to-top { bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px; }
+  .whatsapp-float { bottom: 1.5rem; left: 1.5rem; width: 50px; height: 50px; }
+  .whatsapp-float svg { width: 24px; height: 24px; }
 
   .testimonials-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .testimonial { padding: 1.5rem; }
@@ -1961,6 +2061,12 @@ tr:hover td {
   .delivery-area { padding: 1.2rem; }
   .delivery-area h4 { font-size: 0.92rem; }
   .delivery-area p { font-size: 0.82rem; }
+
+  .faq-question { padding: 1rem 1.2rem; font-size: 0.92rem; }
+  .faq-answer { padding: 0 1.2rem; }
+  .faq-item.open .faq-answer { padding: 0 1.2rem 1rem; }
+  .whatsapp-float { bottom: 1.2rem; left: 1.2rem; width: 48px; height: 48px; }
+  .whatsapp-float svg { width: 22px; height: 22px; }
 
   .contact-form { padding: 1.5rem; }
   .contact-form h3 { font-size: 1.2rem; margin-bottom: 1.2rem; }

@@ -119,6 +119,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ------- FAQ Accordion -------
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+
+      // Zamknij wszystkie
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Otwórz kliknięty (jeśli nie był otwarty)
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // ------- Back to top -------
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
