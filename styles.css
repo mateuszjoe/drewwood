@@ -387,6 +387,77 @@ ul { list-style: none; }
   flex-wrap: wrap;
 }
 
+.hero-sales-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.9fr) auto;
+  align-items: center;
+  gap: 1rem;
+  max-width: 980px;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  border: 1px solid rgba(200,151,92,0.32);
+  border-radius: var(--radius-lg);
+  background: rgba(14,14,14,0.62);
+  box-shadow: 0 18px 55px rgba(0,0,0,0.3);
+  backdrop-filter: blur(14px);
+  text-align: left;
+}
+
+.hero-sales-label {
+  display: block;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.hero-sales-main strong {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.hero-sales-main p {
+  color: rgba(255,255,255,0.68);
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.hero-sales-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.hero-sales-items span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.82);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.hero-sales-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  color: #16110a;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  font-size: 0.9rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 2.5rem;
@@ -2493,6 +2564,15 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .hero-sales-panel {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-sales-items {
+    justify-content: center;
+  }
+
   .local-hero-grid,
   .local-grid {
     grid-template-columns: 1fr;
@@ -2675,6 +2755,10 @@ h2 {
   .hero-lead { font-size: 0.95rem; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { justify-content: center; }
+  .hero-sales-panel { padding: 0.9rem; margin-top: 1.4rem; }
+  .hero-sales-main strong { font-size: 0.98rem; }
+  .hero-sales-items span { flex: 1 1 calc(50% - 0.45rem); justify-content: center; }
+  .hero-sales-link { width: 100%; }
   .scroll-indicator { bottom: 1.5rem; }
 
   .section { padding: 3rem 0; }
