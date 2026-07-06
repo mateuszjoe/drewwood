@@ -1,57 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <loc>https://www.drewwood.com.pl/</loc>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <loc>https://www.drewwood.com.pl/blog/</loc>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/dostawa.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/drewno-kominkowe-wawer.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/jaki-gatunek-drewna-do-kominka.html</loc>
+    <loc>https://www.drewwood.com.pl/drewno-kominkowe-otwock.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/drewno-kominkowe-jozefow.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/drewno-kominkowe-sulejowek.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/drewno-kominkowe-halinow.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/drewno-kominkowe-minsk-mazowiecki.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/blog/drewno-kominkowe-warszawa-i-okolice-dostawa.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/blog/ile-drewna-na-zime-kalkulator.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/blog/jaki-gatunek-drewna-do-kominka.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/drewno-kominkowe-z-dostawa-cennik.html</loc>
+    <loc>https://www.drewwood.com.pl/blog/drewno-kominkowe-z-dostawa-cennik.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.drewwood.com.pl/blog/kora-ogrodowa-zastosowanie-frakcje-cena.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/kora-ogrodowa-zastosowanie-frakcje-cena.html</loc>
+    <loc>https://www.drewwood.com.pl/blog/ziemia-ogrodowa-worki-jak-wybrac.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/ziemia-ogrodowa-worki-jak-wybrac.html</loc>
+    <loc>https://www.drewwood.com.pl/blog/jak-rozpalac-w-kominku-metoda-top-down.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/jak-rozpalac-w-kominku-metoda-top-down.html</loc>
+    <loc>https://www.drewwood.com.pl/blog/jak-przechowywac-drewno-kominkowe.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/jak-przechowywac-drewno-kominkowe.html</loc>
+    <loc>https://www.drewwood.com.pl/blog/popiol-z-kominka-zastosowanie.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mateuszjoe.github.io/drewwood/blog/popiol-z-kominka-zastosowanie.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>

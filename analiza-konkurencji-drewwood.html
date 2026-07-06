@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analiza Konkurencji — drewwood.com.pl</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wood-900: #1a0f0a;
+    --wood-800: #2d1810;
+    --wood-700: #4a2c1e;
+    --wood-600: #6b3f28;
+    --wood-500: #8b5a3c;
+    --wood-400: #a87c5f;
+    --wood-300: #c9a88a;
+    --wood-200: #e4d3c1;
+    --wood-100: #f5ede4;
+    --wood-50: #faf7f3;
+    --ember: #d4622b;
+    --ember-light: #e8854f;
+    --ember-dark: #b84d1a;
+    --ash: #6b7280;
+    --smoke: #374151;
+    --green: #3d8b5e;
+    --green-bg: #edf7f0;
+    --red: #c0392b;
+    --red-bg: #fdf0ee;
+    --yellow: #d4920b;
+    --yellow-bg: #fef9ec;
+    --bg: #faf7f3;
+    --card: #ffffff;
+    --shadow: 0 1px 3px rgba(26,15,10,0.06), 0 6px 16px rgba(26,15,10,0.04);
+    --shadow-lg: 0 4px 12px rgba(26,15,10,0.08), 0 16px 40px rgba(26,15,10,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--wood-900);
+    line-height: 1.65;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--wood-900) 0%, var(--wood-700) 50%, var(--wood-600) 100%);
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  }
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: var(--wood-300);
+    margin-bottom: 28px;
+    backdrop-filter: blur(8px);
+  }
+  .hero-badge .dot { width: 6px; height: 6px; background: var(--ember); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 span { color: var(--ember-light); }
+  .hero p {
+    color: var(--wood-300);
+    font-size: 17px;
+    max-width: 600px;
+    font-weight: 300;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-meta-item { color: var(--wood-300); font-size: 13px; }
+  .hero-meta-item strong { color: #fff; display: block; font-size: 18px; font-weight: 600; margin-bottom: 2px; }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAVIGATION */
+  .toc {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 28px 32px;
+    margin: -32px auto 48px;
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+  .toc h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--ash);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .toc a {
+    color: var(--wood-700);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc a:hover { background: var(--wood-100); color: var(--ember-dark); }
+  .toc a .num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ember);
+    background: rgba(212,98,43,0.08);
+    border-radius: 4px;
+    padding: 2px 6px;
+    min-width: 22px;
+    text-align: center;
+  }
+
+  /* SECTIONS */
+  section { margin-bottom: 56px; }
+  .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--ember);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--wood-800);
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--wood-800);
+    margin-bottom: 12px;
+  }
+  p { margin-bottom: 14px; color: var(--smoke); }
+
+  /* RANKING TABLE */
+  .ranking-wrap {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin: 24px 0;
+  }
+  .ranking-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .ranking-table thead th {
+    background: var(--wood-800);
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+  .ranking-table thead th:first-child { padding-left: 20px; }
+  .ranking-table tbody tr { border-bottom: 1px solid var(--wood-100); transition: background 0.1s; }
+  .ranking-table tbody tr:hover { background: var(--wood-50); }
+  .ranking-table tbody td { padding: 14px 16px; vertical-align: middle; }
+  .ranking-table tbody td:first-child { padding-left: 20px; }
+  .firm-name { font-weight: 600; color: var(--wood-800); display: block; }
+  .firm-url { font-size: 12px; color: var(--ash); }
+  .firm-loc { font-size: 13px; color: var(--ash); }
+  .rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 26px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .r-high { background: var(--green-bg); color: var(--green); }
+  .r-mid { background: var(--yellow-bg); color: var(--yellow); }
+  .r-low { background: var(--red-bg); color: var(--red); }
+  .total-score {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--wood-800);
+  }
+  .rank-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: 4px;
+  }
+  .rank-1 { background: #fef3c7; color: #92400e; }
+  .rank-2 { background: #e5e7eb; color: #374151; }
+  .rank-3 { background: #fed7aa; color: #9a3412; }
+
+  /* PINNED ENTRIES */
+  .pinned-section {
+    background: linear-gradient(135deg, rgba(212,98,43,0.04) 0%, rgba(212,98,43,0.01) 100%);
+    border: 1.5px solid var(--ember);
+    border-radius: 14px;
+    padding: 28px 24px 20px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .pinned-section::before {
+    content: '📌 TWOJE STRONY';
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: var(--bg);
+    padding: 0 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--ember);
+  }
+  .pinned-table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--card); border-radius: 10px; overflow: hidden; }
+  .pinned-table thead th {
+    background: var(--ember-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+  .pinned-table thead th:first-child { padding-left: 20px; }
+  .pinned-table tbody tr { border-bottom: 1px solid rgba(212,98,43,0.12); }
+  .pinned-table tbody td { padding: 14px 16px; vertical-align: middle; }
+  .pinned-table tbody td:first-child { padding-left: 20px; }
+  .pin-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .pin-badge.dev { background: #dbeafe; color: #1e40af; }
+  .pin-badge.live { background: #fce7f3; color: #9d174d; }
+  .pinned-card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1.5px solid var(--ember);
+    position: relative;
+  }
+  .pinned-card .cc-header { border-bottom-color: rgba(212,98,43,0.15); }
+  .pinned-card::after {
+    content: '📌';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 18px;
+  }
+
+  /* COMPETITOR CARDS */
+  .competitor-card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .competitor-card:hover { box-shadow: var(--shadow-lg); }
+  .cc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--wood-100);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cc-header-left { display: flex; align-items: center; gap: 14px; }
+  .cc-rank {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    background: var(--wood-100);
+    color: var(--wood-700);
+    flex-shrink: 0;
+  }
+  .cc-rank.top { background: var(--ember); color: #fff; }
+  .cc-title { font-size: 18px; font-weight: 700; color: var(--wood-800); }
+  .cc-url { font-size: 13px; color: var(--ember); }
+  .cc-score-badge {
+    background: var(--wood-100);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--wood-700);
+  }
+  .cc-ratings {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--wood-100);
+  }
+  .cc-rating-item {
+    background: var(--card);
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .cc-rating-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ash);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .cc-rating-val {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .cc-body { padding: 20px 24px; }
+  .cc-section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cc-section-title.good { color: var(--green); }
+  .cc-section-title.bad { color: var(--red); }
+  .cc-text { color: var(--smoke); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+
+  /* INSIGHTS */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .insight-card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 24px;
+    border-top: 3px solid var(--ember);
+  }
+  .insight-card .icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(212,98,43,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .insight-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wood-800);
+    margin-bottom: 10px;
+  }
+  .insight-card p { font-size: 14px; margin: 0; }
+
+  /* PHASES */
+  .phase {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--ember);
+  }
+  .phase.p2 { border-left-color: var(--wood-500); }
+  .phase.p3 { border-left-color: var(--wood-300); }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .phase-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .phase .phase-num { background: var(--ember); }
+  .phase.p2 .phase-num { background: var(--wood-500); }
+  .phase.p3 .phase-num { background: var(--wood-300); color: var(--wood-800); }
+  .phase h3 { margin: 0; font-size: 17px; }
+  .phase-subtitle { font-size: 13px; color: var(--ash); font-weight: 400; }
+  .phase ul {
+    list-style: none;
+    padding: 0;
+  }
+  .phase li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    color: var(--smoke);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .phase li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--ember);
+    font-weight: 700;
+  }
+
+  /* FOOTER */
+  .report-footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--ash);
+    font-size: 13px;
+    border-top: 1px solid var(--wood-200);
+    margin-top: 60px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { padding: 48px 24px 40px; }
+    .hero-meta { flex-wrap: wrap; gap: 20px; }
+    .toc { margin: -20px 16px 32px; padding: 20px; }
+    .cc-ratings { grid-template-columns: repeat(2, 1fr); }
+    .cc-header { flex-direction: column; align-items: flex-start; }
+    .ranking-wrap { overflow-x: auto; }
+  }
+
+  @media print {
+    body { font-size: 12px; }
+    .hero { padding: 40px; }
+    .competitor-card, .phase, .insight-card { break-inside: avoid; }
+    .toc { box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Raport analityczny</div>
+    <h1>Analiza konkurencji<br><span>branża drewna kominkowego</span></h1>
+    <p>Kompleksowa analiza 10 najlepszych stron internetowych w branży + porównanie z obecną stroną drewwood.com.pl i wersją testową w budowie. Raport przygotowany jako inspiracja do budowy drewwood.com.pl.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>12</strong>stron przeanalizowanych</div>
+      <div class="hero-meta-item"><strong>4</strong>wymiary oceny</div>
+      <div class="hero-meta-item"><strong>Mazowsze</strong>fokus geograficzny</div>
+      <div class="hero-meta-item"><strong>Luty 2026</strong>data raportu</div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="container">
+<div class="toc">
+  <h3>Spis treści</h3>
+  <div class="toc-grid">
+    <a href="#ranking"><span class="num">1</span>Ranking konkurentów</a>
+    <a href="#analiza"><span class="num">2</span>Szczegółowa analiza</a>
+    <a href="#wnioski"><span class="num">3</span>Kluczowe wnioski</a>
+    <a href="#rekomendacje"><span class="num">4</span>Rekomendacje</a>
+  </div>
+</div>
+
+<!-- SECTION 1: RANKING -->
+<section id="ranking">
+  <div class="section-label">Sekcja 01</div>
+  <h2>Ranking konkurentów</h2>
+  <p>Ocena w skali 1–5 w czterech kategoriach: Design & UX, SEO & widoczność, prezentacja oferty, funkcjonalności (sklep, kalkulator, dostawa). Sortowanie wg łącznego wyniku.</p>
+
+  <div class="pinned-section">
+    <table class="pinned-table">
+      <thead>
+        <tr>
+          <th>Strona</th>
+          <th>Typ</th>
+          <th>Design</th>
+          <th>SEO</th>
+          <th>Oferta</th>
+          <th>Funkcje</th>
+          <th>Suma</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="firm-name">mateuszjoe.github.io/drewwood <span class="pin-badge dev">DEV</span></span>
+            <span class="firm-url">Strona testowa — w budowie</span>
+          </td>
+          <td class="firm-loc">Testowa</td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="total-score">14</span>/20</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="firm-name">drewwood.com.pl <span class="pin-badge live">LIVE</span></span>
+            <span class="firm-url">Obecna strona produkcyjna</span>
+          </td>
+          <td class="firm-loc">Produkcyjna</td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="total-score">5</span>/20</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ranking-wrap">
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Firma</th>
+          <th>Lokalizacja</th>
+          <th>Design</th>
+          <th>SEO</th>
+          <th>Oferta</th>
+          <th>Funkcje</th>
+          <th>Suma</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank-num rank-1">1</span></td>
+          <td><span class="firm-name">Drewnex24.pl</span><span class="firm-url">drewnex24.pl</span></td>
+          <td class="firm-loc">Dolnośląskie</td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="total-score">19</span>/20</td>
+        </tr>
+        <tr>
+          <td><span class="rank-num rank-2">2</span></td>
+          <td><span class="firm-name">DrewKom.pl</span><span class="firm-url">drewkom.pl</span></td>
+          <td class="firm-loc">Ogólnopolska</td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="total-score">18</span>/20</td>
+        </tr>
+        <tr>
+          <td><span class="rank-num rank-3">3</span></td>
+          <td><span class="firm-name">Grafka.com.pl</span><span class="firm-url">grafka.com.pl</span></td>
+          <td class="firm-loc">Grodzisk Maz.</td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="rating r-high">5</span></td>
+          <td><span class="total-score">17</span>/20</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="firm-name">DrewnoChrostek.pl</span><span class="firm-url">drewnochrostek.pl</span></td>
+          <td class="firm-loc">Ogólnopolska</td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="total-score">14</span>/20</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="firm-name">ExtraDrewnoOpalowe.pl</span><span class="firm-url">extradrewnoopalowe.pl</span></td>
+          <td class="firm-loc">Warszawa</td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="total-score">12</span>/20</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="firm-name">ZieloneKominkowe.pl</span><span class="firm-url">zielonekominkowe.pl</span></td>
+          <td class="firm-loc">Dolnośląskie</td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="total-score">12</span>/20</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><span class="firm-name">Drewno-Kanon.pl</span><span class="firm-url">drewno-kanon.pl</span></td>
+          <td class="firm-loc">Warszawa</td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="total-score">10</span>/20</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><span class="firm-name">Drewno-Kominkowe.waw.pl</span><span class="firm-url">drewno-kominkowe.waw.pl</span></td>
+          <td class="firm-loc">Piaseczno</td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-high">4</span></td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="total-score">9</span>/20</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><span class="firm-name">NajtanszeDrewno.com.pl</span><span class="firm-url">najtanszedrewno.com.pl</span></td>
+          <td class="firm-loc">Józefosław</td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="total-score">8</span>/20</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><span class="firm-name">KominkoweDrewno.net</span><span class="firm-url">kominkowedrewno.net</span></td>
+          <td class="firm-loc">Józefina / Grodzisk</td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="rating r-low">2</span></td>
+          <td><span class="rating r-mid">3</span></td>
+          <td><span class="rating r-low">1</span></td>
+          <td><span class="total-score">7</span>/20</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 2: DETAILED ANALYSIS -->
+<section id="analiza">
+  <div class="section-label">Sekcja 02</div>
+  <h2>Szczegółowa analiza konkurentów</h2>
+
+  <!-- PINNED: Your sites -->
+  <div class="pinned-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank top" style="background:var(--green)">✦</div>
+        <div>
+          <div class="cc-title">Strona testowa (DEV) <span class="pin-badge dev">W BUDOWIE</span></div>
+          <div class="cc-url">mateuszjoe.github.io/drewwood</div>
+        </div>
+      </div>
+      <div class="cc-score-badge" style="background:rgba(61,139,94,0.1);color:var(--green)">14/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Nowoczesny, responsywny design — znacznie lepszy od 80% konkurencji na Mazowszu. Hero sekcja z wideo w tle. Rozbudowana prezentacja oferty: szczegółowe opisy gatunków drewna z kalorycznością, czasem schnięcia i zapachem. Trzy kategorie produktów (drewno, kora, ziemia) — szerszy asortyment niż większość firm. Sekcja o sezonowaniu z podziałem na 3 poziomy wilgotności. Galeria realizacji (16+ zdjęć). Animowane liczniki (dostawy, lata, klienci, zasięg). Szczegółowe opisy kory z frakcjami i zastosowaniami. Porady przechowywania drewna wbudowane w stronę.</p>
+      <div class="cc-section-title bad">⚠ Do poprawy / brakuje</div>
+      <p class="cc-text">Brak sklepu online / koszyka — zamówienia tylko telefonicznie. Cennik bez konkretnych cen (wycena telefoniczna) — to duży minus vs Grafka czy Drewnex24, które pokazują ceny. Brak bloga / contentu SEO — stracony potencjał na ruch organiczny. Brak landing pages pod lokalizacje. Brak opinii klientów / social proof. Brak SSL na docelowej domenie. Strona nie ma jeszcze meta description i schema.org. Formularze kontaktowe mogłyby być bardziej rozbudowane (kalkulator ceny).</p>
+    </div>
+  </div>
+
+  <div class="pinned-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank" style="background:var(--red-bg); color:var(--red)">!</div>
+        <div>
+          <div class="cc-title">Obecna strona (LIVE) <span class="pin-badge live">PRODUKCJA</span></div>
+          <div class="cc-url">drewwood.com.pl</div>
+        </div>
+      </div>
+      <div class="cc-score-badge" style="background:var(--red-bg);color:var(--red)">5/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Co jest</div>
+      <p class="cc-text">Podstawowe informacje o firmie i ofercie. Numer telefonu widoczny. Podstrony: O nas, Cennik, Galeria, Kontakt — poprawna struktura nawigacji. Domena drewwood.com.pl — krótka, branżowa, łatwa do zapamiętania. Informacja o certyfikatach i pochodzeniu drewna z Lasów Państwowych.</p>
+      <div class="cc-section-title bad">⚠ Krytyczne problemy</div>
+      <p class="cc-text">Archaiczny design — wygląda jak strona z lat 2008-2010. Cennik jest pusty — same myślniki zamiast cen. Brak responsywności mobile. Brak SSL (http, nie https). Zerowe SEO — brak meta tagów, brak schema.org, brak bloga. Brak galerii zdjęć produktów. Brak opinii klientów. Brak mapy zasięgu dostaw. Brak formularza kontaktowego (tylko telefon i email). Domena na PHP — przestarzała technologia. Strona testowa (DEV) jest już ogromnym skokiem jakościowym i powinna jak najszybciej zastąpić tę wersję.</p>
+    </div>
+  </div>
+
+  <hr style="border:none;border-top:2px dashed var(--wood-200);margin:40px 0 32px;">
+
+  <!-- #1 Drewnex24 -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank top">1</div>
+        <div>
+          <div class="cc-title">Drewnex24.pl</div>
+          <div class="cc-url">drewnex24.pl — Dolnośląskie (Piecowice)</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">19/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Pełny sklep online PrestaShop z zaawansowanym konfiguratorem (gatunek × długość × łupanie × opakowanie × sezonowanie). Ponad 600 opinii Google (4.8/5). 20 lat doświadczenia. Blog z poradnikami generujący ruch organiczny. Kody rabatowe i promocje sezonowe. Sprzedaż hurtowa. Dostawa do 500 km z automatycznym kalkulatorem kosztów transportu. Strony realizacji pod miasta (Wrocław, Legnica, Jelenia Góra).</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Nie działa na Mazowszu (południowa Polska). Strona mogłaby być szybsza — dużo elementów na stronie głównej. Design przyzwoity, ale nie wyróżniający się.</p>
+    </div>
+  </div>
+
+  <!-- #2 DrewKom -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank top">2</div>
+        <div>
+          <div class="cc-title">DrewKom.pl</div>
+          <div class="cc-url">drewkom.pl — Ogólnopolska (od 2012)</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">18/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Najlepszy design w branży — nowoczesny, czytelny, profesjonalny. Automatyczny kalkulator cen z konfiguratorem na karcie produktu. Kalendarz dostaw z wyborem terminu. Płatności online (Przelewy24). Szeroka oferta (drewno kominkowe + tarcica + paliki + faszyna + deski ranczo). Firma rodzinna z historią od 2012.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Mniej rozpoznawalna marka niż Grafka czy Drewnex. Duży asortyment może rozpraszać klienta szukającego wyłącznie drewna kominkowego. SEO mogłoby być silniejsze (mniej contentu blogowego).</p>
+    </div>
+  </div>
+
+  <!-- #3 Grafka -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank top">3</div>
+        <div>
+          <div class="cc-title">Grafka.com.pl</div>
+          <div class="cc-url">grafka.com.pl — Grodzisk Mazowiecki</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">17/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--green)">5/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Bezpośredni konkurent na Mazowszu (Grodzisk Maz., Pruszków, Warszawa-Zachód). Strefa Klienta online 24/7 ze śledzeniem zamówień, zamawianiem dostaw i zgłaszaniem odbioru skrzyń. Filmy wideo z procesu produkcji. Opcja Standard vs Premium. System zwrotu pustych skrzyń za rozpałkę gratis. Poradnik zakupu drewna. Cennik z pełną transparentnością. Regulamin dostaw. Sprzedaż hurtowa do Niemiec.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Design nieco przestarzały — wygląda jak strona sprzed 8-10 lat. Brak pełnego e-commerce z koszykiem. Strefa Klienta jest funkcjonalna, ale UI wymaga odświeżenia.</p>
+    </div>
+  </div>
+
+  <!-- #4 DrewnoChrostek -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">4</div>
+        <div>
+          <div class="cc-title">DrewnoChrostek.pl</div>
+          <div class="cc-url">drewnochrostek.pl — Ogólnopolska (kurierem)</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">14/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Czysty sklep WooCommerce z pełnym procesem zakupowym. Drewno suszone komorowo (wilgotność <20%). Sprzedaż w wygodnych formatach: kartony, worki, skrzyniopalety. Blog z artykułami SEO. Darmowa dostawa na paletach. 20 lat doświadczenia. Rozpałki ekologiczne w ofercie.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Brak obecności lokalnej na Mazowszu — wyłącznie dostawa kurierska. Ograniczony asortyment gatunków (głównie buk). Design WooCommerce generyczny.</p>
+    </div>
+  </div>
+
+  <!-- #5 ExtraDrewnoOpalowe -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">5</div>
+        <div>
+          <div class="cc-title">ExtraDrewnoOpalowe.pl</div>
+          <div class="cc-url">extradrewnoopalowe.pl — Warszawa</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">12/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Świetna strategia SEO lokalnego — landing pages pod konkretne lokalizacje na Mazowszu (Warszawa, dzielnice). Opisy gatunków drewna z parametrami technicznymi. Współpraca z tartakami. Pozycjonowanie na wiele fraz lokalnych.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Treści wyglądają na generowane przez AI — powtarzalne, mało autentyczne. Brak prawdziwego sklepu online. Design generyczny, brak wyróżnika. Brak opinii klientów.</p>
+    </div>
+  </div>
+
+  <!-- #5 ZieloneKominkowe -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">5</div>
+        <div>
+          <div class="cc-title">ZieloneKominkowe.pl</div>
+          <div class="cc-url">zielonekominkowe.pl — Dolnośląskie</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">12/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Firma rodzinna od 2000 roku z tysiącami stałych klientów. Newsletter budujący bazę. Ekologiczne pozycjonowanie (popiół jako nawóz, wspieranie polskiej gospodarki). Profesjonalny, budujący zaufanie content. Flota samowyładowczych samochodów.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Nie obsługuje Mazowsza (Dolny Śląsk/Opolskie). Brak sklepu online — zamówienia telefoniczne. Design OK, ale bez nowoczesnych elementów interaktywnych.</p>
+    </div>
+  </div>
+
+  <!-- #7 Drewno-Kanon -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">7</div>
+        <div>
+          <div class="cc-title">Drewno-Kanon.pl</div>
+          <div class="cc-url">drewno-kanon.pl — Warszawa (Trakt Lubelski)</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">10/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Fizyczny skład w Warszawie (Klimontowska / Trakt Lubelski). Wieloletnie doświadczenie. Dobre opinie Google. Usługi transportu i układania drewna u klienta. Stacjonarny punkt sprzedaży z konkretnymi godzinami otwarcia.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Przestarzały design strony. Brak sklepu online. Słaba optymalizacja SEO — brak bloga, thin content. Brak prezentacji oferty z cenami na stronie.</p>
+    </div>
+  </div>
+
+  <!-- #8 Drewno-Kominkowe.waw.pl -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">8</div>
+        <div>
+          <div class="cc-title">Drewno-Kominkowe.waw.pl</div>
+          <div class="cc-url">drewno-kominkowe.waw.pl — Piaseczno i okolice</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">9/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--green)">4/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Działają od 1989 roku — najdłuższy staż na liście. Szczegółowy cennik z podziałem na wymiary (40cm, 30cm, 25cm, 20cm). Drewno z Lasów Państwowych. Transport + rozładunek + układanie w cenie (od 5m³). Domena „drewno-kominkowe.waw.pl" daje sygnał lokalny. Konkretna lista obsługiwanych miejscowości.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Archaiczny design — strona wygląda jakby powstała w 2005 roku. Brak e-commerce. Chaotyczny układ treści. Zero contentu edukacyjnego. Zamówienia wyłącznie telefoniczne.</p>
+    </div>
+  </div>
+
+  <!-- #9 NajtanszeDrewno -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">9</div>
+        <div>
+          <div class="cc-title">NajtanszeDrewno.com.pl</div>
+          <div class="cc-url">najtanszedrewno.com.pl — Józefosław / Mogielnica</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">8/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Bezpośredni konkurent na Mazowszu (Józefosław, Piaseczno, Warszawa południowa). Jasne USP cenowe — nazwa domeny mówi wszystko. Transport z windą i elektrycznym paleciaczkiem. Palety 1m³ gwarantujące uczciwą ilość. Prosta, czytelna komunikacja. Wilgotność 12-18%.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Bardzo prosta strona WordPress. Brak sklepu online — zamówienia SMS/email. Brak bloga i contentu SEO. Strona ma zaledwie 3 podstrony (główna, cennik, kontakt). Zerowe budowanie marki.</p>
+    </div>
+  </div>
+
+  <!-- #10 KominkoweDrewno -->
+  <div class="competitor-card">
+    <div class="cc-header">
+      <div class="cc-header-left">
+        <div class="cc-rank">10</div>
+        <div>
+          <div class="cc-title">KominkoweDrewno.net</div>
+          <div class="cc-url">kominkowedrewno.net — Józefina / Grodzisk Maz.</div>
+        </div>
+      </div>
+      <div class="cc-score-badge">7/20</div>
+    </div>
+    <div class="cc-ratings">
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Design</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">SEO</div>
+        <div class="cc-rating-val" style="color:var(--red)">2/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Oferta</div>
+        <div class="cc-rating-val" style="color:var(--yellow)">3/5</div>
+      </div>
+      <div class="cc-rating-item">
+        <div class="cc-rating-label">Funkcje</div>
+        <div class="cc-rating-val" style="color:var(--red)">1/5</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-section-title good">✦ Mocne strony</div>
+      <p class="cc-text">Lokalna firma na Mazowszu obsługująca Grodzisk, Pruszków, Warszawę. Drewno z Lasów Państwowych. Usługi dodatkowe (oranie, odśnieżanie). Własny transport 2-8 mp. Cięcie na dowolny wymiar na zamówienie.</p>
+      <div class="cc-section-title bad">⚠ Słabe strony</div>
+      <p class="cc-text">Archaiczna strona HTML bez responsywności. Brak sklepu online. Brak bloga i contentu. Bardzo słabe SEO. Strona nie budzi zaufania wizualnie. Brak opinii i social proof.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: INSIGHTS -->
+<section id="wnioski">
+  <div class="section-label">Sekcja 03</div>
+  <h2>Kluczowe wnioski</h2>
+
+  <div class="insight-grid">
+    <div class="insight-card">
+      <div class="icon">🎨</div>
+      <h4>Design — ogromna szansa</h4>
+      <p>Lokalna konkurencja na Mazowszu ma strony z lat 2005-2015. Firmy jak NajtanszeDrewno, KominkoweDrewno czy Drewno-Kominkowe.waw.pl mają oceny 1-2/5 za design. Nowoczesna, ciepła strona drewwood.com.pl natychmiast wyróżni się na tle rynku. Wzory: DrewKom (najlepszy design) i Drewnex24 (najlepsze UX zakupowe).</p>
+    </div>
+    <div class="insight-card">
+      <div class="icon">🔍</div>
+      <h4>SEO — lokalne landing pages</h4>
+      <p>ExtraDrewnoOpalowe udowadnia, że strategia landing pages pod lokalizacje działa. Rekomendacja: stwórz podstrony pod „drewno kominkowe Józefów", „Sulejówek", „Otwock", „Mińsk Mazowiecki", „Warszawa wschód". Prowadź blog z poradnikami. Zbieraj opinie Google.</p>
+    </div>
+    <div class="insight-card">
+      <div class="icon">📦</div>
+      <h4>Oferta — transparentność wygrywa</h4>
+      <p>Grafka i Drewnex24 wyznaczają standard: cennik z podziałem na gatunki, zdjęcia każdego produktu, wilgotność, kaloryczność, opcje pakowania. Grafka wyróżnia się opcją Standard vs Premium. Klienci cenią przejrzystość i uczciwość — pokaż dokładnie co sprzedajesz.</p>
+    </div>
+    <div class="insight-card">
+      <div class="icon">⚡</div>
+      <h4>Funkcje — sklep online to must-have</h4>
+      <p>Na 10 firm, tylko 3 mają prawdziwy sklep online (DrewKom, Drewnex24, DrewnoChrostek). Większość lokalnych firm na Mazowszu bazuje na telefonach i SMS-ach. Kalkulator cen + kalendarz dostaw + płatności online = natychmiastowa przewaga konkurencyjna.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: RECOMMENDATIONS -->
+<section id="rekomendacje">
+  <div class="section-label">Sekcja 04</div>
+  <h2>Rekomendacje dla drewwood.com.pl</h2>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">1</div>
+      <div>
+        <h3>MVP — must-have na start</h3>
+        <div class="phase-subtitle">Zbuduj fundamenty, które pokonają 70% lokalnej konkurencji</div>
+      </div>
+    </div>
+    <ul>
+      <li>Nowoczesna responsywna strona z ciepłym, drewnianym designem (dark wood + ember accents)</li>
+      <li>Przejrzysty cennik z podziałem na gatunki, zdjęcia produktów, parametry (wilgotność, kaloryczność)</li>
+      <li>Formularz zamówienia / kontaktowy z kalkulatorem orientacyjnej ceny</li>
+      <li>Sekcja „O firmie" budująca zaufanie — zdjęcia zespołu, magazynu, procesu</li>
+      <li>Mapa zasięgu dostaw z konkretnymi miejscowościami</li>
+      <li>Podstawowe SEO: meta tagi, lokalne frazy, Google Business Profile, schema.org</li>
+      <li>Opinie klientów (nawet manualne na start, potem integracja z Google)</li>
+    </ul>
+  </div>
+
+  <div class="phase p2">
+    <div class="phase-header">
+      <div class="phase-num">2</div>
+      <div>
+        <h3>Rozwój — budowanie przewagi</h3>
+        <div class="phase-subtitle">Funkcjonalności, które posiada tylko TOP 3 w branży</div>
+      </div>
+    </div>
+    <ul>
+      <li>Sklep online z koszykiem, płatnościami online i automatycznym kalkulatorem transportu</li>
+      <li>Blog z poradnikami (jak wybrać drewno, jak przechowywać, różnice między gatunkami)</li>
+      <li>Landing pages pod lokalizacje (Sulejówek, Józefów, Otwock, Mińsk, Warszawa-Wawer)</li>
+      <li>System opinii klientów + integracja z Google Reviews</li>
+      <li>Tabela porównawcza gatunków drewna (kaloryczność, czas spalania, zapach)</li>
+    </ul>
+  </div>
+
+  <div class="phase p3">
+    <div class="phase-header">
+      <div class="phase-num">3</div>
+      <div>
+        <h3>Przewaga — wyróżnienie na rynku</h3>
+        <div class="phase-subtitle">Funkcje, które nie ma prawie nikt w branży</div>
+      </div>
+    </div>
+    <ul>
+      <li>Strefa Klienta (śledzenie zamówień, historia, faktury — wzór: Grafka)</li>
+      <li>Kalendarz dostaw z wyborem konkretnego dnia (wzór: DrewKom)</li>
+      <li>Program lojalnościowy / automatyczne rabaty dla stałych klientów</li>
+      <li>Konfigurator produktu (gatunek × długość × ilość × opakowanie — wzór: Drewnex24)</li>
+      <li>Powiadomienia SMS/email o statusie zamówienia</li>
+      <li>Filmy wideo z procesu produkcji i dostaw (wzór: Grafka)</li>
+    </ul>
+  </div>
+</section>
+
+<div class="report-footer">
+  <p>Raport przygotowany dla <strong>drewwood.com.pl</strong> — luty 2026</p>
+  <p>Dane zebrane na podstawie analizy stron internetowych, wyników wyszukiwania Google i profili firm.</p>
+</div>
+
+</div><!-- /container -->
+
+</body>
+</html>

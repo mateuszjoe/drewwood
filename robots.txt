@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mateuszjoe.github.io/drewwood/sitemap.xml
+Sitemap: https://www.drewwood.com.pl/sitemap.xml
