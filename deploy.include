@@ -1,0 +1,21 @@
+# Public files and folders uploaded to FTP.
+# Keep server-only Joomla/admin files out of regular deploys unless you intentionally add them.
+.htaccess
+index.html
+dostawa.html
+drewno-kominkowe-wawer.html
+drewno-kominkowe-otwock.html
+drewno-kominkowe-jozefow.html
+drewno-kominkowe-sulejowek.html
+drewno-kominkowe-halinow.html
+drewno-kominkowe-minsk-mazowiecki.html
+robots.txt
+sitemap.xml
+styles.css
+script.js
+blog.css
+analiza-konkurencji-drewwood.html
+blog
+hero_tło
+video
+Zdjęcia

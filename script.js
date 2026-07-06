@@ -1,4 +1,4 @@
-/* ======================================
+﻿/* ======================================
    DREWWOOD — Script
    ====================================== */
 
@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   window.addEventListener('load', () => {
     setTimeout(() => {
-      preloader.classList.add('loaded');
+      if (preloader) preloader.classList.add('loaded');
     }, 600);
   });
   // Fallback — ukryj po 3s nawet jeśli load nie odpali
-  setTimeout(() => preloader.classList.add('loaded'), 3000);
+  if (preloader) setTimeout(() => preloader.classList.add('loaded'), 3000);
 
   // ------- Rok w stopce -------
   const yearEl = document.getElementById('year');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.hero-heading-fire, .hero-lead-fire').forEach(el => el.style.display = '');
       document.querySelectorAll('.hero-heading-garden, .hero-lead-garden').forEach(el => el.style.display = 'none');
       const cta = document.querySelector('.hero-cta-secondary');
-      if (cta) { cta.textContent = 'Sprawdź cennik'; cta.href = '#cennik'; }
+      if (cta) { cta.textContent = 'Sprawdź ceny drewna'; cta.href = '#cennik'; }
     }
   }
 
@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
 
   function handleNavScroll() {
+    if (!navbar) return;
     if (window.scrollY > 60) {
       navbar.classList.add('scrolled');
     } else {
@@ -123,6 +124,44 @@ document.addEventListener('DOMContentLoaded', () => {
       if (panel) panel.classList.add('active');
     });
   });
+
+  // ------- Kalkulator szybkiej wyceny -------
+  const quoteForm = document.getElementById('quoteCalculator');
+  const quoteSummary = document.getElementById('quoteSummary');
+
+  function getQuoteMessage() {
+    if (!quoteForm) return '';
+
+    const product = document.getElementById('quoteProduct')?.value || 'drewno';
+    const amount = document.getElementById('quoteAmount')?.value || '';
+    const unit = document.getElementById('quoteUnit')?.value || '';
+    const city = document.getElementById('quoteCity')?.value.trim() || 'do ustalenia';
+    const notes = document.getElementById('quoteNotes')?.value.trim();
+
+    let message = `Dzień dobry, chcę zamówić ${amount} ${unit}: ${product}. Miejscowość: ${city}. Proszę o wycenę z dostawą.`;
+    if (notes) message += ` Dodatkowo: ${notes}.`;
+    return message;
+  }
+
+  function updateQuoteSummary() {
+    if (!quoteSummary) return;
+    quoteSummary.innerHTML = `<span class="quote-summary-label">Gotowa wiadomość</span><p>${getQuoteMessage()}</p>`;
+  }
+
+  if (quoteForm) {
+    quoteForm.querySelectorAll('input, select, textarea').forEach(field => {
+      field.addEventListener('input', updateQuoteSummary);
+      field.addEventListener('change', updateQuoteSummary);
+    });
+
+    quoteForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const url = `https://wa.me/48736764460?text=${encodeURIComponent(getQuoteMessage())}`;
+      window.open(url, '_blank', 'noopener');
+    });
+
+    updateQuoteSummary();
+  }
 
   // ------- FAQ Accordion -------
   document.querySelectorAll('.faq-question').forEach(btn => {
